@@ -1,0 +1,148 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"title": "Чикен Хит Грибной",
+			"price": 129,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/4fc/w89tevuk6ga7xe1y42zq05phpbm3w10n/large.png",
+			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
+			"categories": 0
+		},
+		{
+			"id": 2,
+			"title": "Чикен Премьер Грибной",
+			"price": 179,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7cc/amylhs1eedx3rzru2t0c65ysznm2yau5/large.png",
+			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, ломтик сыра Чеддер, ароматный бекон, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
+			"categories": 0
+		},
+		{
+			"id": 3,
+			"title": "Пара Биг Хит",
+			"price": 299,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/439/15o41l4ydvnqyh6r0l9hrxc0jtlsec0r/large.png",
+			"description": "Пара Биг Хит по выгодной цене",
+			"categories": 0
+		},
+		{
+			"id": 4,
+			"title": "Биг Чикен Бургер",
+			"price": 259,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/592/topo8m2e0x42dy4duy1qfkmo9se4vrur/large.png",
+			"description": "Большой бургер с нежным филе куриной грудки в хрустящей панировке, сыром Эмменталь, сочными ломтиками помидора, свежим салатом и специальным соусом на булочке с кунжутом",
+			"size": "323 г",
+			"categories": 0
+		},
+		{
+			"id": 5,
+			"title": "Бамбл кофе",
+			"price": 189,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/68e/rz7zssxt7xaoui00misd8q8wba2w0dwh/large.png",
+			"description": "Освежающий напиток на кофейной основе с добавлением апельсинового нектара и карамельного сиропа",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 6,
+			"title": "Раф французский десерт",
+			"price": 195,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/02b/gphmzboqr4egg3jxfan12w76jjia8eo8/large.png",
+			"description": "Молочный напиток с тонким ароматом эспрессо и нежными сливками с добавлением сиропа со вкусом свежевыпеченного круассана",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 7,
+			"title": "Лимонад Спелая слива - красная смородина",
+			"price": 105,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7d1/6cjvec8u4dukdwt4ct095o2b2putydxn/large.png",
+			"description": "Освежающий напиток на основе газированной воды со вкусом спелой сливы и красной смородины.",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 8,
+			"title": "Мороженое черничное",
+			"price": 89,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/cd3/ezf7y29x405vpnyf7u0rd437i7fdctc3/large.png",
+			"description": "Мороженое из натурального цельного молока с добавкой черничного топпинга.",
+			"size": "172 г",
+			"categories": 0
+		},
+		{
+			"id": 9,
+			"title": "Фраппе Карамеьный (сред.)",
+			"price": 159,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/921/pe93vfarx2klqfy3g1sl1mouz7z5uprc/large.png",
+			"description": "Лёгкий освежающий напиток с нежным вкусом карамели, украшенный взбитыми сливками и соусом из карамели.",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 10,
+			"title": "Кидз Комбо обед с игрушкой",
+			"price": 259,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/43a/t773rzp8xff2vz0h5qfzxh1y3jep4z62/large.png",
+			"description": "Кидз Комбо обед с игрушкой – это продукты, которые вы можете выбрать на свой вкус из наггетсов или бургеров, полезных овощей и фруктов, а также добавить к ним любимый напиток из ассортимента. Ребенок будет счастлив получить такой обед, ведь внутри спрятана одна из 12 уникальных игрушек. Предлагаем юным гостям “Вкусно – и точка” собрать всю коллекцию, а также окунуться в увлекательный мир онлайн игры с героями коллекции по QR коду с упаковки Кидз Комбо. Наличие продуктов и цену уточняйте в выбранном предприятии.",
+			"categories": 0
+		},
+		{
+			"id": 10,
+			"title": "Кидз Комбо блины с игрушкой",
+			"price": 259,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/dad/tcc34a1s3y9f21vnwatmb43d0zsm230o/large.png",
+			"description": "Кидз Комбо обед с игрушкой – это продукты, которые вы можете выбрать на свой вкус из наггетсов или бургеров, полезных овощей и фруктов, а также добавить к ним любимый напиток из ассортимента. Ребенок будет счастлив получить такой обед, ведь внутри спрятана одна из 12 уникальных игрушек. Предлагаем юным гостям “Вкусно – и точка” собрать всю коллекцию, а также окунуться в увлекательный мир онлайн игры с героями коллекции по QR коду с упаковки Кидз Комбо. Наличие продуктов и цену уточняйте в выбранном предприятии.",
+			"categories": 0
+		},
+		{
+			"id": 11,
+			"title": "Орбит Нежная Мята",
+			"price": 45,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/e06/lymkfm7biz9phsqo4scjncytvigd6d2g/large.png",
+			"description": "Жевательная резинка",
+			"categories": 0
+		},
+		{
+			"id": 12,
+			"title": "Орбит Рефрешерс Мята",
+			"price": 65,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/9bf/1hbgt3b9jicb8721jer989mlo04jr0q8/large.png",
+			"description": "Жевательная резинка",
+			"categories": 0
+		}
+	],
+	"category": [
+		{
+			"id": 1,
+			"title": "Новинки"
+		},
+		{
+			"id": 2,
+			"title": "Популярное"
+		},
+		{
+			"id": 3,
+			"title": "Напитки"
+		},
+		{
+			"id": 4,
+			"title": "Комбо обед"
+		},
+		{
+			"id": 5,
+			"title": "Бургеры и Роллы"
+		},
+		{
+			"id": 6,
+			"title": "Картофель, стартеры и салаты"
+		},
+		{
+			"id": 7,
+			"title": "Кафе"
+		},
+		{
+			"id": 8,
+			"title": "Завтрак"
+		}
+	]
+}
