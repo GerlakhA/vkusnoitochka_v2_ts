@@ -4,6 +4,6 @@ export interface IProduct {
 	price: number
 	image: string
 	description: string
-	categories: number
+	categories: number | string
 	size?: string
 }

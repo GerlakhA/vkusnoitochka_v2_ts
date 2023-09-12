@@ -1,12 +1,36 @@
+import { FC, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import App from './App'
 import Menu from './menu/Menu'
+import Home from './pages/Home'
 
-const RouterDom = () => {
+interface IRouterDom {
+	// onClickCategory: (i: number) => void
+	// value: number
+}
+
+const RouterDom: FC<IRouterDom> = () => {
+	const [categoryId, setCategoryId] = useState(0)
+
 	return (
 		<Routes>
-			<Route element={<Menu />} path={'/menu'} />
-			<Route element={<App />} path={'/'} />
+			<Route
+				element={
+					<Menu
+						value={categoryId}
+						onClickCategory={(i: number) => setCategoryId(i)}
+					/>
+				}
+				path={'/menu'}
+			/>
+			<Route
+				element={
+					<Home
+						value={categoryId}
+						onClickCategory={(i: number) => setCategoryId(i)}
+					/>
+				}
+				path={'/'}
+			/>
 			<Route element={<div>Page Not Found Sorry</div>} path={'*'} />
 		</Routes>
 	)

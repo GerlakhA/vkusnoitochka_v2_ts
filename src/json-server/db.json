@@ -40,7 +40,7 @@
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/68e/rz7zssxt7xaoui00misd8q8wba2w0dwh/large.png",
 			"description": "Освежающий напиток на кофейной основе с добавлением апельсинового нектара и карамельного сиропа",
 			"size": "Средний",
-			"categories": 0
+			"categories": 2
 		},
 		{
 			"id": 6,
@@ -49,7 +49,7 @@
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/02b/gphmzboqr4egg3jxfan12w76jjia8eo8/large.png",
 			"description": "Молочный напиток с тонким ароматом эспрессо и нежными сливками с добавлением сиропа со вкусом свежевыпеченного круассана",
 			"size": "Средний",
-			"categories": 0
+			"categories": 2
 		},
 		{
 			"id": 7,
@@ -58,7 +58,7 @@
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7d1/6cjvec8u4dukdwt4ct095o2b2putydxn/large.png",
 			"description": "Освежающий напиток на основе газированной воды со вкусом спелой сливы и красной смородины.",
 			"size": "Средний",
-			"categories": 0
+			"categories": 2
 		},
 		{
 			"id": 8,
@@ -76,7 +76,7 @@
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/921/pe93vfarx2klqfy3g1sl1mouz7z5uprc/large.png",
 			"description": "Лёгкий освежающий напиток с нежным вкусом карамели, украшенный взбитыми сливками и соусом из карамели.",
 			"size": "Средний",
-			"categories": 0
+			"categories": 2
 		},
 		{
 			"id": 10,
@@ -87,7 +87,7 @@
 			"categories": 0
 		},
 		{
-			"id": 10,
+			"id": 11,
 			"title": "Кидз Комбо блины с игрушкой",
 			"price": 259,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/dad/tcc34a1s3y9f21vnwatmb43d0zsm230o/large.png",
@@ -95,7 +95,7 @@
 			"categories": 0
 		},
 		{
-			"id": 11,
+			"id": 12,
 			"title": "Орбит Нежная Мята",
 			"price": 45,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/e06/lymkfm7biz9phsqo4scjncytvigd6d2g/large.png",
@@ -103,46 +103,201 @@
 			"categories": 0
 		},
 		{
-			"id": 12,
+			"id": 13,
 			"title": "Орбит Рефрешерс Мята",
 			"price": 65,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/9bf/1hbgt3b9jicb8721jer989mlo04jr0q8/large.png",
 			"description": "Жевательная резинка",
 			"categories": 0
-		}
-	],
-	"category": [
-		{
-			"id": 1,
-			"title": "Новинки"
 		},
 		{
-			"id": 2,
-			"title": "Популярное"
+			"id": 14,
+			"title": "Биг Хит",
+			"price": 165,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/8c7/fxne49rb4q1269ymvn7eu1h238grclfm/large.png",
+			"description": "Легендарный бургер с двумя рублеными бифштексами из 100% говядины, маринованными огурчиками, свежим салатом «Айсберг», ломтиком плавленого сыра Чеддер и специальным соусом «Биг Хит» на новой булочке с двумя видами кунжута",
+			"size": "228 г",
+			"categories": 1
 		},
 		{
-			"id": 3,
-			"title": "Напитки"
+			"id": 15,
+			"title": "Гранд Де Люкс",
+			"price": 199,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/0b0/ng7d0ntviq1t2rd7gq2j8fn4limf2e39/large.png",
+			"description": "Сочный бифштекс из натуральной говядины, приготовленный на гриле, карамелизованная булочка с кунжутом, два ломтика сыра Чеддер, свежий салат, кусочек помидора и лук, маринованные огурчики, кетчуп, горчица и специальный соус",
+			"size": "251 г",
+			"categories": 1
 		},
 		{
-			"id": 4,
-			"title": "Комбо обед"
+			"id": 16,
+			"title": "Биг Спешиал",
+			"price": 275,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7ae/3htkg13hcalktmzhlcrdrzzwbjand1t1/large.png",
+			"description": "Это неповторимый сандвич с большим рубленым бифштексом из 100% отборной говядины на большой булочке с кунжутом. Особенный вкус сандвичу придают три кусочка сыра Эмменталь, два ломтика помидора, свежий салат, лук и соус с дымком.",
+			"size": "340 г",
+			"categories": 1
 		},
 		{
-			"id": 5,
-			"title": "Бургеры и Роллы"
+			"id": 17,
+			"title": "Двойной Чизбургер",
+			"price": 145,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/527/uz4p6t1zusho5rzd25z11kfp2dz5tb3o/large.png",
+			"description": "Два рубленых бифштекса из натуральной цельной говядины с двумя кусочками сыра Чеддер на карамелизованной булочке, заправленной горчицей, кетчупом, луком и двумя кусочками маринованного огурчика",
+			"size": "173 г",
+			"categories": 1
 		},
 		{
-			"id": 6,
-			"title": "Картофель, стартеры и салаты"
+			"id": 18,
+			"title": "Чикен Премьер",
+			"price": 159,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/bfe/wz2x2jle52clmt8lg9asd0e3ar3il2i9/large.png",
+			"description": "Сочная куриная котлета в хрустящей панировке, сыр Чеддер, ароматный бекон, ломтик помидора, свежий салат, специальный соус и булочка с кунжутом",
+			"size": "234 г",
+			"categories": 1
 		},
 		{
-			"id": 7,
-			"title": "Кафе"
+			"id": 19,
+			"title": "Чикен Премьер",
+			"price": 85,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/0fa/hiw5kvozah0jssiz2l2n3dm07wckgp11/large.png",
+			"description": "Наггетсы – это сочное 100% белое куриное мясо в хрустящей панировке со специями. Только натуральная курочка без искусственных красителей и ароматизаторов и без консервантов",
+			"size": "6 шт",
+			"categories": 1
 		},
 		{
-			"id": 8,
-			"title": "Завтрак"
+			"id": 20,
+			"title": "Двойной Маффин с яйцом и свиной котлетой",
+			"price": 175,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/1fb/97ee4fkxar0bhptssqc354q757hdpn3c/large.png",
+			"description": "Нежная горячая булочка (английский маффин) с яйцом, двумя аппетитными котлетами из свинины и двумя ломтиками сыра Чеддер",
+			"size": "220 г",
+			"categories": 1
+		},
+		{
+			"id": 21,
+			"title": "Тост с ветчиной",
+			"price": 69,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/105/dm3qxtl3tlxgbsrbpkvgla9v6up55ad8/large.png",
+			"description": "Карамелизованная булочка с ломтиком ветчины и двумя ломтиками плавленного сыра Чеддер",
+			"size": "98 г",
+			"categories": 1
+		},
+		{
+			"id": 22,
+			"title": "Пирожок Вишневый",
+			"price": 65,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/c11/65pu1rp0vs2l3l9c6uy5477ffx2qo0s2/large.png",
+			"description": "Обжаренный во фритюре пирожок со сладкой начинкой из вишни",
+			"size": "80 г",
+			"categories": 1
+		},
+		{
+			"id": 23,
+			"title": "Чикен Хит Грибной Комбо",
+			"price": 249,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/5a7/0z0xzj6xw9tcl4f2bg7ngy9hw5nar73l/large.png",
+			"description": "Комбо состоит из Чикен Хит Грибной, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 24,
+			"title": "Чикен Премьер Грибной Комбо",
+			"price": 289,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/31b/dsm2e1zvf09rgqocueys5kf96b88iqd4/large.png",
+			"description": "Комбо состоит из Чикен Премьер Грибной, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 25,
+			"title": "Биг Чикен Бургер Комбо",
+			"price": 381,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/324/f1l612tbce44n6cw2zkos505xoh8n5yb/large.png",
+			"description": "Комбо состоит из Биг Чикен Бургера, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 26,
+			"title": "Барселона Бургер Комбо",
+			"price": 368,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/c5c/4iz2he7i1sgrpfmx242qg3bf78b66vfz/large.png",
+			"description": "Комбо состоит из Барселона Бургер, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 27,
+			"title": "Барселона Бургер с курицей Комбо ",
+			"price": 344,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/8b1/zx3ekt8m66kplva7w18092bpgnnjl4u4/large.png",
+			"description": "Комбо состоит из Барселона Бургер с курицей, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 28,
+			"title": "Биг Спешиал Ростбиф Комбо",
+			"price": 447,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/0f5/u3r87ly9uzhhwxux6fhz5hh7f4wdxliw/large.png",
+			"description": "Комбо состоит из Биг Спешиал Ростбиф, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 29,
+			"title": "Биг Хит Комбо",
+			"price": 294,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/a0a/yvpnni9k1nx728847xw0cpzuhoecdmhk/large.png",
+			"description": "Комбо состоит из Биг Хита, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 30,
+			"title": "Двойной Биг Хит Комбо",
+			"price": 354,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/793/dqu3hsbcp36rys9d6wvra0uk9zjprsmj/large.png",
+			"description": "Комбо состоит из Двойного Биг Хита, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 31,
+			"title": "Биг Спешиал Джуниор Комбо",
+			"price": 364,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/2ce/dgcu8aziw8ci8tsw3yer9e204drpeaqz/large.png",
+			"description": "Комбо состоит из Биг Спешиал Джуниор, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 32,
+			"title": "Шримп Ролл Комбо",
+			"price": 368,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/435/22ghw76h36wxoz2m3toy2dcjrvilhqgd/large.png",
+			"description": "Комбо состоит из Шримп Ролл, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 33,
+			"title": "Биг Спешиал Ролл Комбо",
+			"price": 337,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/ea6/ju0w2xgv0jl5ns7h90zcjkbk7rs5iis1/large.png",
+			"description": "Комбо состоит из Биг Спешиал Ролл, Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Стандартный",
+			"categories": 3
+		},
+		{
+			"id": 34,
+			"title": "Креветки (9 шт.) Комбо",
+			"price": 481,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/75a/z2fkazu7u6bvkbmh8rht8m0u6p44yb3o/large.png",
+			"description": "Большой Комбо состоит из Креветок (9 шт.), Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
+			"size": "Большой",
+			"categories": 3
 		}
 	]
 }

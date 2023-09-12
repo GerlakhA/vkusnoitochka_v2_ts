@@ -1,14 +1,20 @@
+import { FC } from 'react'
 import CardProduct from '../components/CardProduct'
 import CategoryMenu from './category/CategoryMenu'
 
-const Menu = () => {
+interface IMenu {
+	value: number
+	onClickCategory: (i: number) => void
+}
+
+const Menu: FC<IMenu> = ({ value, onClickCategory }) => {
 	return (
-		<div className='ml-[120px] border-solid border-b w-[1200px]'>
-			<h2 className='text-5xl font-extrabold mb-4 ml-[5px]'>Наше меню</h2>
+		<div className='ml-[120px] border-solid border-b w-[1300px] mt-10'>
+			<h2 className='text-4xl font-black mb-10 ml-[5px]'>Наше меню</h2>
 			<div>
-				<CategoryMenu />
+				<CategoryMenu value={value} onClickCategory={onClickCategory} />
 			</div>
-			<CardProduct />
+			<CardProduct categoryId={value} />
 			<p className='text-[13px] p-4 opacity-60'>
 				Цены и ассортименты продуктов на сайте указаны для выбранного вами
 				региона и могут отличаться в конкретном предприятии. Наличие продуктов и
