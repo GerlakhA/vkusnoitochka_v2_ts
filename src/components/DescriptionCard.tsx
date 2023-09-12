@@ -1,38 +1,44 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { FC } from 'react'
-import { IDescription } from '../types/Getdescription'
 
 interface IDescriptionCard {
-	// id: number | string
+	id: number | string
+	description: string
+	image: string
+	title: string
 }
 
-const DescriptionCard: FC<IDescriptionCard> = () => {
-	const { data } = useQuery(['description'], async () => {
-		const res = await axios.get<IDescription[]>(
-			`http://localhost:5500/products/`
-		)
-		return res.data
-	})
+const DescriptionCard: FC<IDescriptionCard> = ({
+	id,
+	description,
+	image,
+	title,
+}) => {
+	// const { data } = useQuery(['description'], async () => {
+	// 	const res = await axios.get<IDescription[]>(
+	// 		`http://localhost:5500/products?${id}`
+	// 	)
+	// 	return res.data
+	// })
 
 	return (
-		<div className='h-screen w-full bg-overlay z-10'>
-			{data?.map(item => (
-				<div key={`descrition:${item.id}`} className='h-[747px] w-[500px]'>
-					<img src={item.image} />
-					<h2>{item.title}</h2>
-					<div>
-						<p>Описание</p>
-					</div>
-					<div>{item.description}</div>
-					<div>
-						<p>Цена для города</p>
-					</div>
-					<div>
-						<p>Москва</p>
-					</div>
+		<div className='h-[750px] w-[1470px] bg-black z-10 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
+			{/* {data?.map(item => ( */}
+			{/* <div key={`descrition:${id}`} className='h-[747px] w-[500px]'>
+				<img src={image} />
+				<h2>{title}</h2>
+				<div>
+					<p>Описание</p>
 				</div>
-			))}
+				<div>{description}</div>
+				<div>
+					<p>Цена для города</p>
+				</div>
+				<div>
+					<p>Москва</p>
+				</div>
+			</div>
+			))} */}
+			Modal
 		</div>
 	)
 }

@@ -32,7 +32,7 @@ const CategoryMenu: FC<ICategoryMenu> = ({ value, onClickCategory }) => {
 					<div
 						key={i}
 						className='rounded-3xl hover:bg-gray-200 p-[15px] h-[44px] flex justify-center
-						items-center focus:bg-gray-200 cursor-pointer '
+						items-center focus:bg-gray-200 cursor-pointer'
 						onClick={() => onClickCategory(i)}
 					>
 						{items}

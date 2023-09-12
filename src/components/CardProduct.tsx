@@ -31,7 +31,7 @@ const CardProduct: FC<ICardProduct> = ({ categoryId }) => {
 		)
 
 	const popUp = () => {
-		setOpen(true)
+		setOpen(!open)
 	}
 
 	return (

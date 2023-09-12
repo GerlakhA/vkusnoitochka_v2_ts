@@ -16,7 +16,7 @@ const contacts = [
 const Footer = () => {
 	return (
 		<>
-			<div className='w-[1300px] flex justify-start items-start ml-32 border-solid border-b gap-10'>
+			<div className='w-[1200px] flex justify-start items-start ml-32 border-solid border-b gap-10'>
 				<div>
 					<h3 className='flex justify-start items-start m-4 font-extrabold'>
 						О нас
