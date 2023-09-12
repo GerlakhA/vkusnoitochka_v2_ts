@@ -12,7 +12,7 @@ interface IHome {
 
 const Home: FC<IHome> = ({ value, onClickCategory }) => {
 	return (
-		<main className='w-full'>
+		<main className='w-full bg-bg_app'>
 			<div className='flex justify-center items-center mt-4 text-2xl text-black mb-20'>
 				<Carousel />
 			</div>

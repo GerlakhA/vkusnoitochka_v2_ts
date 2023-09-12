@@ -8,6 +8,7 @@ export default {
 				bg_button: '#f4f4f4',
 				bg_card: '#ffffff',
 				overlay: '#717C90',
+				bg_app: '#fdfdfd',
 			},
 		},
 	},

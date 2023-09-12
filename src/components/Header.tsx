@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Category from './Category'
 
@@ -5,8 +6,19 @@ const Header = () => {
 	// const session = useSession()
 
 	// console.log(session)
+
+	const [top, setTop] = useState(true)
+
+	useEffect(() => {
+		const scrollHandler = () => {
+			window.scrollY > 10 ? setTop(false) : setTop(true)
+		}
+		window.addEventListener('scroll', scrollHandler)
+		return () => window.removeEventListener('scroll', scrollHandler)
+	}, [top])
+
 	return (
-		<div className='sticky top-0 z-10 bg-white'>
+		<div className={`sticky top-0 z-20 ${!top && `bg-white shadow-lg`}`}>
 			<header className='flex justify-start items-center w-full h-full p-4'>
 				<div className='flex p-2 ml-[100px]'>
 					<img
@@ -25,9 +37,9 @@ const Header = () => {
 				</div>
 				<Category />
 
-				<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center mr-10'>
+				<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center ml-[44px]'>
 					<Link
-						to={'api/auth/signin'}
+						to={'/signin'}
 						className='m-2 bg-bg_button  h-45 hover:opacity-50'
 					>
 						<button>Войти</button>
