@@ -6,8 +6,8 @@ const Header = () => {
 
 	// console.log(session)
 	return (
-		<div>
-			<header className='flex justify-start items-center w-full p-4 '>
+		<div className='sticky top-0 z-10 bg-white'>
+			<header className='flex justify-start items-center w-full h-full p-4'>
 				<div className='flex p-2 ml-[100px]'>
 					<img
 						src={
