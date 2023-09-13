@@ -11,13 +11,13 @@ interface ICardProduct {
 const CardProduct: FC<ICardProduct> = ({ categoryId }) => {
 	const [open, setOpen] = useState(false)
 
-	const category = categoryId > 0 ? `?categories=${categoryId}` : ''
+	// const category = categoryId > 0 ? `?categories=${categoryId}` : ''
 
 	const getProduct = useQuery({
 		queryKey: ['products', categoryId],
 		queryFn: async () => {
 			const res = await axios.get<IProduct[]>(
-				`http://localhost:5500/products${category}`
+				`http://localhost:5500/products?categories=` + categoryId
 			)
 			return res.data
 		},

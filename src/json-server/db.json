@@ -6,7 +6,7 @@
 			"price": 129,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/4fc/w89tevuk6ga7xe1y42zq05phpbm3w10n/large.png",
 			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
-			"categories": 0
+			"categories": 4
 		},
 		{
 			"id": 2,
@@ -14,7 +14,7 @@
 			"price": 179,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7cc/amylhs1eedx3rzru2t0c65ysznm2yau5/large.png",
 			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, ломтик сыра Чеддер, ароматный бекон, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
-			"categories": 0
+			"categories": 4
 		},
 		{
 			"id": 3,
@@ -22,7 +22,7 @@
 			"price": 299,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/439/15o41l4ydvnqyh6r0l9hrxc0jtlsec0r/large.png",
 			"description": "Пара Биг Хит по выгодной цене",
-			"categories": 0
+			"categories": 4
 		},
 		{
 			"id": 4,
@@ -31,7 +31,7 @@
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/592/topo8m2e0x42dy4duy1qfkmo9se4vrur/large.png",
 			"description": "Большой бургер с нежным филе куриной грудки в хрустящей панировке, сыром Эмменталь, сочными ломтиками помидора, свежим салатом и специальным соусом на булочке с кунжутом",
 			"size": "323 г",
-			"categories": 0
+			"categories": 4
 		},
 		{
 			"id": 5,
@@ -157,7 +157,7 @@
 		},
 		{
 			"id": 19,
-			"title": "Чикен Премьер",
+			"title": "Наггетсы (6шт)",
 			"price": 85,
 			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/0fa/hiw5kvozah0jssiz2l2n3dm07wckgp11/large.png",
 			"description": "Наггетсы – это сочное 100% белое куриное мясо в хрустящей панировке со специями. Только натуральная курочка без искусственных красителей и ароматизаторов и без консервантов",
@@ -298,6 +298,287 @@
 			"description": "Большой Комбо состоит из Креветок (9 шт.), Картофеля на выбор и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации.",
 			"size": "Большой",
 			"categories": 3
+		},
+		{
+			"id": 35,
+			"title": "Сырные треугольники",
+			"price": 109,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/042/j3goz0546x0j7ust2i0msas9jhjh7lqp/large.png",
+			"description": "Аппетитные треугольники из тянущегося сыра в хрустящей панировке.",
+			"categories": 5
+		},
+		{
+			"id": 36,
+			"title": "Сырные треугольники Чоризо",
+			"price": 109,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/935/z08w9yisjolw9hp3odof1x2w4gm5pucq/large.png",
+			"description": "Аппетитные треугольники из тянущегося сыра с кусочками пикантной колбаски Чоризо в хрустящей панировке.",
+			"size": "80 г",
+			"categories": 5
+		},
+		{
+			"id": 37,
+			"title": "Сырные палочки",
+			"price": 109,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/d42/3rpamssxlked1ytro8dvennypiyuxng9/large.png",
+			"description": "Вкуснейшие сырные палочки в хрустящей панировке",
+			"size": "87 г",
+			"categories": 5
+		},
+		{
+			"id": 38,
+			"title": "Большой Снэк Бокс со стрипсами",
+			"price": 445,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/b6b/juvh5l0ba1jhzweug2gdiexy7e155v7z/large.png",
+			"description": "Сочные и нежные Стрипсы – 4 шт. Наггетсы – 4 шт. Сырные треугольники Чоризо– 4 шт. 2 стандартные порции Картофеля.",
+			"size": "312 г",
+			"categories": 5
+		},
+		{
+			"id": 39,
+			"title": "Большой Снэк Бокс с крыльями",
+			"price": 469,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7c5/u4dzbc9ewy3b0ixyfc30562l03w0wetn/large.png",
+			"description": "Пикантные Куриные крылышки в хрустящей панировке – 4 шт. Наггетсы – 4 шт. Сырные треугольники Чоризо – 4 шт. 2 стандартные порции Картофеля.",
+			"size": "352 г",
+			"categories": 5
+		},
+		{
+			"id": 40,
+			"title": "Гранд Фри",
+			"price": 65,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/06d/4g3g37mog36m25fooet9b0c540pk2mzd/large.png",
+			"description": "Большие, вкусные палочки картофеля, обжаренные в растительном фритюре и слегка посоленные",
+			"size": "Маленький",
+			"categories": 5
+		},
+		{
+			"id": 41,
+			"title": "Картофель Фри",
+			"price": 65,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/738/cd5wbp50q12811jgigioi2gi2ty0z40m/large.png",
+			"description": "Вкусные, обжаренные в растительном фритюре и слегка посоленные палочки картофеля",
+			"size": "Маленький",
+			"categories": 5
+		},
+		{
+			"id": 42,
+			"title": "Картофельные Дольки",
+			"price": 99,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/5cc/fbttkjji7cqtegmil2qxckf5ws6d0imu/large.png",
+			"description": "Аппетитные ломтики картофеля, обжаренные в растительном масле с добавлением соли",
+			"size": "Средние",
+			"categories": 5
+		},
+		{
+			"id": 43,
+			"title": "Картофель по-деревенски",
+			"price": 99,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/2b4/bv0x29u35eqerit0561tfcqugm12fwds/large.png",
+			"description": "Вкусные, обжаренные в растительном фритюре ломтики картофеля со специями",
+			"size": "Средний",
+			"categories": 5
+		},
+		{
+			"id": 44,
+			"title": "Снэк Бокс",
+			"price": 169,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/ed1/y0dahuyp088wdc1fgo5g99ll69c9hnqc/large.png",
+			"description": "Неподражаемые Наггетсы в хрустящей панировке со специями– 3 шт. Сочные и нежные Стрипсы – 2 шт. Маленькая порция Картофеля",
+			"categories": 5
+		},
+		{
+			"id": 45,
+			"title": "Снэк Бокс с крыльями",
+			"price": 201,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/cd9/8uoh7szg4mon9ah0d8ew8gbtzvpyk1qn/large.png",
+			"description": "Пикантные Куриные крылышки в хрустящей панировке – 2 шт. Наггетсы – 2 шт. Сочные и нежные Стрипсы – 2 шт. Средняя порция Картофеля",
+			"categories": 5
+		},
+		{
+			"id": 46,
+			"title": "Стрипсы",
+			"price": 115,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/531/rqhvw8k9wwzgdyz6gm2wc1o0yhgqgfwl/large.png",
+			"description": "Вкуснейшие сырные палочки в хрустящей панировке",
+			"size": "3 шт",
+			"categories": 5
+		},
+		{
+			"id": 47,
+			"title": "Куриные Крылышки",
+			"price": 145,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/12d/b2z2o2zcziu8ln7d2tn86g4c9vrx3ho1/large.png",
+			"description": "Сочная, нежная курица в хрустящей панировке. Попробуйте стрипсы из 100% белого мяса!",
+			"size": "3 шт",
+			"categories": 5
+		},
+		{
+			"id": 48,
+			"title": "Салат Цезарь",
+			"price": 172,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/ff9/iu7q61doz16xkv5x126s97sf0ypbsdaq/large.png",
+			"description": "Хрустящие листья салата айсберг, сочные томаты черри, тертый сыр пармезан и нежнейшие куриные стрипсы.",
+			"size": "179 г",
+			"categories": 5
+		},
+		{
+			"id": 49,
+			"title": "Салат Цезарь с креветками",
+			"price": 239,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/7e8/guhn7qet8u3s382ponufwxsq9wzravx6/large.png",
+			"description": "Хрустящие листья салата айсберг, сочные томаты черри, тертый сыр пармезан и жареные креветки в панировке.",
+			"size": "146 г",
+			"categories": 5
+		},
+		{
+			"id": 50,
+			"title": "Овощной салат",
+			"price": 109,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/5ed/7vm0uktb1ejxqhus8iool9i3d9soo02u/large.png",
+			"description": "Хрустящие листья салата Айсберг, сочные томаты черри и маслины",
+			"size": "121 г",
+			"categories": 5
+		},
+		{
+			"id": 51,
+			"title": "Чикен Хит Грибной",
+			"price": 129,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/4fc/w89tevuk6ga7xe1y42zq05phpbm3w10n/large.png",
+			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
+			"categories": 0
+		},
+		{
+			"id": 52,
+			"title": "Чикен Премьер Грибной",
+			"price": 179,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7cc/amylhs1eedx3rzru2t0c65ysznm2yau5/large.png",
+			"description": "Сочная куриная котлета в хрустящей панировке, нежный грибной соус, ломтик сыра Чеддер, ароматный бекон, свежий салат, кусочки жареного хрустящего лука и карамелизированная булочка с кунжутом",
+			"categories": 0
+		},
+		{
+			"id": 53,
+			"title": "Пара Биг Хит",
+			"price": 299,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/439/15o41l4ydvnqyh6r0l9hrxc0jtlsec0r/large.png",
+			"description": "Пара Биг Хит по выгодной цене",
+			"categories": 0
+		},
+		{
+			"id": 54,
+			"title": "Биг Чикен Бургер",
+			"price": 259,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/592/topo8m2e0x42dy4duy1qfkmo9se4vrur/large.png",
+			"description": "Большой бургер с нежным филе куриной грудки в хрустящей панировке, сыром Эмменталь, сочными ломтиками помидора, свежим салатом и специальным соусом на булочке с кунжутом",
+			"size": "323 г",
+			"categories": 0
+		},
+		{
+			"id": 55,
+			"title": "Бамбл кофе",
+			"price": 189,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/68e/rz7zssxt7xaoui00misd8q8wba2w0dwh/large.png",
+			"description": "Освежающий напиток на кофейной основе с добавлением апельсинового нектара и карамельного сиропа",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 56,
+			"title": "Раф французский десерт",
+			"price": 195,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/02b/gphmzboqr4egg3jxfan12w76jjia8eo8/large.png",
+			"description": "Молочный напиток с тонким ароматом эспрессо и нежными сливками с добавлением сиропа со вкусом свежевыпеченного круассана",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 57,
+			"title": "Лимонад Спелая слива - красная смородина",
+			"price": 105,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7d1/6cjvec8u4dukdwt4ct095o2b2putydxn/large.png",
+			"description": "Освежающий напиток на основе газированной воды со вкусом спелой сливы и красной смородины.",
+			"size": "Средний",
+			"categories": 0
+		},
+		{
+			"id": 58,
+			"title": "Латте Карамель",
+			"price": 149,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/b6f/j9he128llvek80y4dpg70s73vj2eet55/large.png",
+			"description": "Молочный напиток с тонким ароматом эспрессо, нежной молочной пеной и карамельным сиропом",
+			"size": "Средний",
+			"categories": 6
+		},
+		{
+			"id": 59,
+			"title": "Капучино Ваниль",
+			"price": 149,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/e37/h9r73duwzs86bplw8ue9jyzhk8gaxk2r/large.png",
+			"description": "Классический капучино с воздушной молочной пенкой и ванильным сиропом",
+			"size": "Средний",
+			"categories": 6
+		},
+		{
+			"id": 60,
+			"title": "Торт Шоколадный",
+			"price": 185,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/b8d/8ibnofyax1s9x5j0w89udbt029o7aadd/large.png",
+			"description": "Шоколадный бисквит, наполненный шоколадным кремом.",
+			"size": "112 г",
+			"categories": 6
+		},
+		{
+			"id": 61,
+			"title": "Тирамису",
+			"price": 175,
+			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/4d1/8zhcs8ae1359dw429hdgw6f67m40uljt/large.png",
+			"description": "Классический десерт с мягким кофейным бисквитом, нежным муссом со вкусом сыра маскарпоне и ароматным какао",
+			"categories": 6
+		},
+		{
+			"id": 62,
+			"title": "Клубничный Чизкейк",
+			"price": 185,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/f78/eu1tu1iego044b2msyysp5z9r5nmutjv/large.png",
+			"description": "Мягкий сливочный сыр на песочной основе, сверху украшен клубникой в желе",
+			"size": "119 г",
+			"categories": 6
+		},
+		{
+			"id": 63,
+			"title": "Маффин с яйцом и ростбифом Комбо",
+			"price": 274,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/a55/76rf1y6jmc7xbnhb9nsg5fmujuhxn2oo/large.png",
+			"description": "Комбо состоит из Маффина с яйцом и ростбифом, Картофеля (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
+			"size": "Стандартный",
+			"categories": 7
+		},
+		{
+			"id": 64,
+			"title": "Яичница с ветчиной Комбо",
+			"price": 280,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/84e/sse0m3puhtspc8lswqzqvxakc463tf9c/large.png",
+			"description": "Комбо состоит из Яичницы с ветчиной, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
+			"size": "Стандартный",
+			"categories": 7
+		},
+		{
+			"id": 65,
+			"title": "Яичница с беконом Комбо",
+			"price": 280,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/db4/d76adm8f7vs0f2396eez17vkcu7d7tpy/large.png",
+			"description": "Комбо состоит из Яичницы с беконом, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
+			"size": "Стандартный",
+			"categories": 7
+		},
+		{
+			"id": 66,
+			"title": "Омлет с сыром Комбо",
+			"price": 280,
+			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/ad9/viq74wen6zsip7tjsf4pppxea506t98z/large.png",
+			"description": "Комбо состоит из Яичницы с беконом, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
+			"size": "Стандартный",
+			"categories": 7
 		}
 	]
 }
