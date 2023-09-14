@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 import Category from './Category'
 
 const Header = () => {
-	// const session = useSession()
-
-	// console.log(session)
-
 	const [top, setTop] = useState(true)
 
 	useEffect(() => {
@@ -19,7 +15,11 @@ const Header = () => {
 
 	return (
 		<div className={`sticky top-0 z-20 ${!top && `bg-white shadow-lg`}`}>
-			<header className='flex justify-start items-center w-full h-full p-4'>
+			<header
+				className={`flex justify-start items-center w-full h-full p-2 sticky top-0 z-20 ${
+					!top && `bg-white shadow-lg`
+				}`}
+			>
 				<div className='flex p-2 ml-[100px]'>
 					<img
 						src={
