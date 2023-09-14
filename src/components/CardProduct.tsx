@@ -6,18 +6,21 @@ import { IProduct } from '../types/GetProduct.interface'
 
 interface ICardProduct {
 	categoryId: number
+	searchTitle: string
 }
 
-const CardProduct: FC<ICardProduct> = ({ categoryId }) => {
+const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
 	const [open, setOpen] = useState(false)
 
-	// const category = categoryId > 0 ? `?categories=${categoryId}` : ''
+	const category = `?categories=${categoryId}`
+
+	const search = `&q=${searchTitle}`
 
 	const getProduct = useQuery({
-		queryKey: ['products', categoryId],
+		queryKey: ['products', categoryId, searchTitle],
 		queryFn: async () => {
 			const res = await axios.get<IProduct[]>(
-				`http://localhost:5500/products?categories=` + categoryId
+				`http://localhost:5500/products${category}${search}`
 			)
 			return res.data
 		},

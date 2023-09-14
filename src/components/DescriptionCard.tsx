@@ -5,6 +5,7 @@ interface IDescriptionCard {
 	description: string
 	image: string
 	title: string
+	price: number
 }
 
 const DescriptionCard: FC<IDescriptionCard> = ({
@@ -12,6 +13,7 @@ const DescriptionCard: FC<IDescriptionCard> = ({
 	description,
 	image,
 	title,
+	price,
 }) => {
 	// const { data } = useQuery(['description'], async () => {
 	// 	const res = await axios.get<IDescription[]>(
@@ -23,7 +25,10 @@ const DescriptionCard: FC<IDescriptionCard> = ({
 	return (
 		<div className='h-[750px] w-[1470px] bg-black z-10 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
 			{/* {data?.map(item => ( */}
-			{/* <div key={`descrition:${id}`} className='h-[747px] w-[500px]'>
+			<div
+				key={`descrition:${id}`}
+				className='h-[747px] w-[500px] bg-white z-50'
+			>
 				<img src={image} />
 				<h2>{title}</h2>
 				<div>
@@ -36,9 +41,9 @@ const DescriptionCard: FC<IDescriptionCard> = ({
 				<div>
 					<p>Москва</p>
 				</div>
+				<span>{price}</span>
 			</div>
-			))} */}
-			Modal
+			{/* ))} */}
 		</div>
 	)
 }
