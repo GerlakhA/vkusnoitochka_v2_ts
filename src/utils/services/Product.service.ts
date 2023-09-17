@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { ICartItem } from '../../types/GetCartItem'
 import { IProduct } from '../../types/GetProduct.interface'
 import { IDescription } from '../../types/Getdescription'
 
@@ -18,6 +17,6 @@ export const ProductService = {
 	},
 
 	async createCartItems(data: { image: string; title: string; price: number }) {
-		return await axios.post<ICartItem>('http://localhost:5500/cart', data)
+		return await axios.post('http://localhost:5500/cart', data)
 	},
 }

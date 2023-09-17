@@ -583,14 +583,6 @@
   ],
   "cart": [
     {
-      "id": 3,
-      "title": "Пара Биг Хит",
-      "price": 299,
-      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/439/15o41l4ydvnqyh6r0l9hrxc0jtlsec0r/large.png",
-      "description": "Пара Биг Хит по выгодной цене",
-      "categories": 4
-    },
-    {
       "title": "Лимонад Спелая слива - красная смородина",
       "price": 105,
       "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/7d1/6cjvec8u4dukdwt4ct095o2b2putydxn/large.png",
