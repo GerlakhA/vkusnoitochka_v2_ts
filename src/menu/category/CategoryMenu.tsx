@@ -12,7 +12,7 @@ interface ICategoryMenu {
 	value: number
 }
 
-const CategoryMenu: FC<ICategoryMenu> = ({ value, onClickCategory }) => {
+const CategoryMenu: FC<ICategoryMenu> = ({ onClickCategory }) => {
 	const categories = [
 		'Новинки',
 		'Популярное',
