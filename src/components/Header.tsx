@@ -39,10 +39,10 @@ const Header = () => {
 
 				<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center ml-[44px]'>
 					<Link
-						to={'/signin'}
+						to={'/cart'}
 						className='m-2 bg-bg_button  h-45 hover:opacity-50'
 					>
-						<button>Войти</button>
+						<button>Корзина</button>
 					</Link>
 				</div>
 			</header>

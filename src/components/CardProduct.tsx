@@ -1,8 +1,9 @@
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { FC, useState } from 'react'
 import { PacmanLoader } from 'react-spinners'
 import { IProduct } from '../types/GetProduct.interface'
+import { ProductService } from '../utils/services/Product.service'
 
 interface ICardProduct {
 	categoryId: number
@@ -11,10 +12,15 @@ interface ICardProduct {
 
 const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
 	const [open, setOpen] = useState(false)
+	// const [image, setImage] = useState('')
+	// const [price, setPrice] = useState(0)
+	// const [title, setTitle] = useState('')
 
 	const category = `?categories=${categoryId}`
 
 	const search = `&q=${searchTitle}`
+
+	const client = useQueryClient()
 
 	const getProduct = useQuery({
 		queryKey: ['products', categoryId, searchTitle],
@@ -23,6 +29,15 @@ const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
 				`http://localhost:5500/products${category}${search}`
 			)
 			return res.data
+		},
+	})
+
+	const postProduct = useMutation({
+		mutationKey: ['create product'],
+		mutationFn: (data: { image: string; title: string; price: number }) =>
+			ProductService.createCartItems(data),
+		onSuccess: () => {
+			client.invalidateQueries(['products'])
 		},
 	})
 
@@ -53,10 +68,21 @@ const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
 					<p className='absolute left-5 top-[350px] font-bold'>
 						от {item.price} ₽
 					</p>
+					<button
+						onClick={() =>
+							postProduct.mutate({
+								title: item.title,
+								price: item.price,
+								image: item.image,
+							})
+						}
+						className='absolute right-5 top-[340px] border rounded-lg p-2 bg-orange-500'
+					>
+						B корзину
+					</button>
 				</div>
 			))}
 		</div>
 	)
 }
-
 export default CardProduct

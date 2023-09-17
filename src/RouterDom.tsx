@@ -4,6 +4,7 @@ import Menu from './menu/Menu'
 import Cafe from './pages/Cafe'
 import Home from './pages/Home'
 import Offers from './pages/Offers'
+import Cart from './components/Cart'
 
 interface IRouterDom {
 	// onClickCategory: (i: number) => void
@@ -35,6 +36,7 @@ const RouterDom: FC<IRouterDom> = () => {
 			/>
 			<Route element={<Offers />} path={'/offers'} />
 			<Route element={<Cafe />} path={'/cafe'} />
+			<Route element={<Cart />} path={'/cart'} />
 			<Route element={<div>Page Not Found Sorry</div>} path={'*'} />
 		</Routes>
 	)
