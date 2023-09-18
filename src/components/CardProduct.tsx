@@ -9,8 +9,8 @@ interface ICardProduct {
 	categoryId: number
 	searchTitle: string
 	sortValue: {
-		name: 'по цене'
-		sortProperty: 'price'
+		name: string
+		sortProperty: string
 	}
 }
 
@@ -31,7 +31,7 @@ const CardProduct: FC<ICardProduct> = ({
 	const client = useQueryClient()
 
 	const getProduct = useQuery({
-		queryKey: ['products', categoryId, searchTitle, sortValue],
+		queryKey: ['products', categoryId, searchTitle, sortBy, order],
 		queryFn: async () => {
 			const res = await axios.get<IProduct[]>(
 				`http://localhost:5500/products${category}${search}&_sort=${sortBy}&_order=${order}`

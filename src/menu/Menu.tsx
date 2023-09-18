@@ -7,8 +7,8 @@ import CategoryMenu from './category/CategoryMenu'
 interface IMenu {
 	value: number
 	sortValue: {
-		name: 'по цене'
-		sortProperty: 'price'
+		name: string
+		sortProperty: string
 	}
 	onClickCategory: (i: number) => void
 	onClickSort: (i: number) => void

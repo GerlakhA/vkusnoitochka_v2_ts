@@ -3,8 +3,8 @@ import { FC, useState } from 'react'
 interface ISort {
 	onClickSort: (i: number) => void
 	sortValue: {
-		name: 'по цене'
-		sortProperty: 'price'
+		name: string
+		sortProperty: string
 	}
 }
 

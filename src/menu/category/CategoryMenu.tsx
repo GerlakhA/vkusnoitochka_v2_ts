@@ -5,8 +5,8 @@ interface ICategoryMenu {
 	onClickSort: (i: number) => void
 	value: number
 	sortValue: {
-		name: 'по цене'
-		sortProperty: 'price'
+		name: string
+		sortProperty: string
 	}
 }
 
