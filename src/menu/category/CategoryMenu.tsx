@@ -1,18 +1,20 @@
 import { FC } from 'react'
-import Select from 'react-select'
-
-const options = [
-	{ id: 1, value: 'Кидз Комбо', label: 'Кидз Комбо' },
-	{ id: 2, value: 'Десерты', label: 'Десерты' },
-	{ id: 3, value: 'Соусы и другое', label: 'Соусы и другое' },
-]
 
 interface ICategoryMenu {
 	onClickCategory: (i: number) => void
+	onClickSort: (i: number) => void
 	value: number
+	sortValue: {
+		name: 'по цене'
+		sortProperty: 'price'
+	}
 }
 
-const CategoryMenu: FC<ICategoryMenu> = ({ onClickCategory }) => {
+const CategoryMenu: FC<ICategoryMenu> = ({
+	onClickCategory,
+	onClickSort,
+	sortValue,
+}) => {
 	const categories = [
 		'Новинки',
 		'Популярное',
@@ -24,10 +26,8 @@ const CategoryMenu: FC<ICategoryMenu> = ({ onClickCategory }) => {
 		'Завтрак',
 	]
 
-	// const selectOptions = ['Кидз Комбо', 'Десерты', 'Соусы и другое']
-
 	return (
-		<div className='ml-50 flex items-center w-full '>
+		<div className='ml-50 flex items-center w-full'>
 			{categories &&
 				categories.map((items, i) => (
 					<div
@@ -39,15 +39,6 @@ const CategoryMenu: FC<ICategoryMenu> = ({ onClickCategory }) => {
 						{items}
 					</div>
 				))}
-			<Select options={options} className='w-[140px] ml-10' placeholder='Еще' />
-			{/* <select placeholder='Еще' className='w-40 ml-20'>
-				{selectOptions &&
-					selectOptions.map((item, i) => (
-						<option key={i} value={value} onClick={() => onClickCategory(i)}>
-							{item}
-						</option>
-					))}
-			</select> */}
 		</div>
 	)
 }

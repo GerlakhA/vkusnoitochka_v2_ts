@@ -8,25 +8,33 @@ import { ProductService } from '../utils/services/Product.service'
 interface ICardProduct {
 	categoryId: number
 	searchTitle: string
+	sortValue: {
+		name: 'по цене'
+		sortProperty: 'price'
+	}
 }
 
-const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
+const CardProduct: FC<ICardProduct> = ({
+	categoryId,
+	searchTitle,
+	sortValue,
+}) => {
 	const [open, setOpen] = useState(false)
-	// const [image, setImage] = useState('')
-	// const [price, setPrice] = useState(0)
-	// const [title, setTitle] = useState('')
 
 	const category = `?categories=${categoryId}`
 
 	const search = `&q=${searchTitle}`
 
+	const sortBy = sortValue.sortProperty.replace('-', '')
+	const order = sortValue.sortProperty.includes('-') ? 'asc' : 'desc'
+
 	const client = useQueryClient()
 
 	const getProduct = useQuery({
-		queryKey: ['products', categoryId, searchTitle],
+		queryKey: ['products', categoryId, searchTitle, sortValue],
 		queryFn: async () => {
 			const res = await axios.get<IProduct[]>(
-				`http://localhost:5500/products${category}${search}`
+				`http://localhost:5500/products${category}${search}&_sort=${sortBy}&_order=${order}`
 			)
 			return res.data
 		},
@@ -59,7 +67,7 @@ const CardProduct: FC<ICardProduct> = ({ categoryId, searchTitle }) => {
 					key={`product:${item.id}`}
 					className='w-[282px] h-[394px] p-[20px] shadow-md hover:shadow-lg  
 						cursor-pointer flex flex-col justify-start items-center
-						m-[10px] rounded-xl relative bg-bg_card z-[1px] border border-solid border-bg_button'
+						m-[10px] rounded-xl relative bg-bg_card border border-solid border-bg_button'
 					onClick={popUp}
 				>
 					<img src={item.image} alt='product' width={242} height={239} />

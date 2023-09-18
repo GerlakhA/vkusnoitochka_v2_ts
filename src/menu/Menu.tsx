@@ -1,19 +1,30 @@
 import { FC, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import CardProduct from '../components/CardProduct'
+import { Sort } from '../components/Sort'
 import CategoryMenu from './category/CategoryMenu'
 
 interface IMenu {
 	value: number
+	sortValue: {
+		name: 'по цене'
+		sortProperty: 'price'
+	}
 	onClickCategory: (i: number) => void
+	onClickSort: (i: number) => void
 }
 
-const Menu: FC<IMenu> = ({ value, onClickCategory }) => {
+const Menu: FC<IMenu> = ({
+	value,
+	sortValue,
+	onClickCategory,
+	onClickSort,
+}) => {
 	const [title, setTitle] = useState('')
 
 	return (
 		<div className='ml-[120px] border-solid border-b w-[1300px] mt-10'>
-			<div className='flex justify-between w-[700px] ml-2 relative'>
+			<div className='flex justify-between w-[1200px] ml-2 relative'>
 				<h2 className='text-4xl font-black mb-10 ml-[5px]'>Наше меню</h2>
 				<div>
 					<input
@@ -21,17 +32,29 @@ const Menu: FC<IMenu> = ({ value, onClickCategory }) => {
 						onChange={e => setTitle(e.target.value)}
 						type='search'
 						placeholder='Поиск...'
-						className='mt-2 w[200px] h-[35px] pl-[25px] border border-solid focus:outline-none rounded-md'
+						className='mt-2 w-[300px] h-[35px] pl-[25px] border border-solid focus:outline-none rounded-md'
 					/>
 				</div>
-				<div className='absolute top-[18px] left-[502px] opacity-40'>
+				<div className='w-[250px]'>
+					<Sort sortValue={sortValue} onClickSort={onClickSort} />
+				</div>
+				<div className='absolute top-[18px] left-[444px] opacity-40'>
 					<AiOutlineSearch />
 				</div>
 			</div>
 			<div>
-				<CategoryMenu value={value} onClickCategory={onClickCategory} />
+				<CategoryMenu
+					value={value}
+					sortValue={sortValue}
+					onClickSort={onClickSort}
+					onClickCategory={onClickCategory}
+				/>
 			</div>
-			<CardProduct categoryId={value} searchTitle={title} />
+			<CardProduct
+				categoryId={value}
+				sortValue={sortValue}
+				searchTitle={title}
+			/>
 			<p className='text-[13px] p-4 opacity-60'>
 				Цены и ассортименты продуктов на сайте указаны для выбранного вами
 				региона и могут отличаться в конкретном предприятии. Наличие продуктов и

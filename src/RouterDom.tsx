@@ -1,10 +1,10 @@
 import { FC, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Cart from './components/Cart'
 import Menu from './menu/Menu'
 import Cafe from './pages/Cafe'
 import Home from './pages/Home'
 import Offers from './pages/Offers'
-import Cart from './components/Cart'
 
 interface IRouterDom {
 	// onClickCategory: (i: number) => void
@@ -13,6 +13,10 @@ interface IRouterDom {
 
 const RouterDom: FC<IRouterDom> = () => {
 	const [categoryId, setCategoryId] = useState(0)
+	const [sortId, setSortId] = useState({
+		name: 'по цене',
+		sortProperty: 'price',
+	})
 
 	return (
 		<Routes>
@@ -20,7 +24,9 @@ const RouterDom: FC<IRouterDom> = () => {
 				element={
 					<Menu
 						value={categoryId}
+						sortValue={sortId}
 						onClickCategory={(i: number) => setCategoryId(i)}
+						onClickSort={(i: number) => setSortId(i)}
 					/>
 				}
 				path={'/menu'}
@@ -29,7 +35,9 @@ const RouterDom: FC<IRouterDom> = () => {
 				element={
 					<Home
 						value={categoryId}
+						sortValue={sortId}
 						onClickCategory={(i: number) => setCategoryId(i)}
+						onClickSort={(i: number) => setSortId(i)}
 					/>
 				}
 				path={'/'}
