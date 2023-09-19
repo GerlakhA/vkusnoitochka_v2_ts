@@ -1,22 +1,17 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
+import { useGlobalContext } from '../hooks/MyContext'
 
-interface ISort {
-	onClickSort: (i: number) => void
-	sortValue: {
-		name: string
-		sortProperty: string
-	}
-}
-
-export const Sort: FC<ISort> = ({ onClickSort, sortValue }) => {
+export const Sort = () => {
 	const [open, setOpen] = useState(false)
 	const list = [
 		{ name: 'цене (DESC)', sortProperty: 'price' },
 		{ name: 'По алфавиту (ASC)', sortProperty: '-title' },
 	]
 
-	const onClickListItem = (i: number) => {
-		onClickSort(i)
+	const { sortId, onClickSort } = useGlobalContext()
+
+	const onClickListItem = (obj: { name: string; sortProperty: string }) => {
+		onClickSort(obj)
 		setOpen(false)
 	}
 
@@ -42,7 +37,7 @@ export const Sort: FC<ISort> = ({ onClickSort, sortValue }) => {
 				onClick={() => setOpen(!open)}
 				className='text-orange-500 border-b border-dashed border-orange-500'
 			>
-				{sortValue.name}
+				{sortId.name}
 			</span>
 			{open && (
 				<div className='sort__popup'>
@@ -50,10 +45,9 @@ export const Sort: FC<ISort> = ({ onClickSort, sortValue }) => {
 						{list.map((obj, i) => (
 							<li
 								key={i}
-								//@ts-ignore
 								onClick={() => onClickListItem(obj)}
 								className={
-									sortValue.sortProperty === obj.sortProperty ? 'active' : ''
+									sortId.sortProperty === obj.sortProperty ? 'active' : ''
 								}
 							>
 								{obj.name}

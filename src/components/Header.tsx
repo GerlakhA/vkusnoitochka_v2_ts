@@ -36,6 +36,7 @@ const Header = () => {
 					</Link>
 				</div>
 				<Category />
+				{/* Same as */}
 
 				<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center ml-[44px]'>
 					<Link

@@ -1,25 +1,17 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import CardProduct from '../components/CardProduct'
 import { Sort } from '../components/Sort'
 import CategoryMenu from './category/CategoryMenu'
 
-interface IMenu {
-	value: number
-	sortValue: {
-		name: string
-		sortProperty: string
+const Menu = (
+	{
+		// value,
+		// sortValue,
+		// onClickCategory,
+		// onClickSort,
 	}
-	onClickCategory: (i: number) => void
-	onClickSort: (i: number) => void
-}
-
-const Menu: FC<IMenu> = ({
-	value,
-	sortValue,
-	onClickCategory,
-	onClickSort,
-}) => {
+) => {
 	const [title, setTitle] = useState('')
 
 	return (
@@ -36,25 +28,16 @@ const Menu: FC<IMenu> = ({
 					/>
 				</div>
 				<div className='w-[250px]'>
-					<Sort sortValue={sortValue} onClickSort={onClickSort} />
+					<Sort />
 				</div>
 				<div className='absolute top-[18px] left-[444px] opacity-40'>
 					<AiOutlineSearch />
 				</div>
 			</div>
 			<div>
-				<CategoryMenu
-					value={value}
-					sortValue={sortValue}
-					onClickSort={onClickSort}
-					onClickCategory={onClickCategory}
-				/>
+				<CategoryMenu />
 			</div>
-			<CardProduct
-				categoryId={value}
-				sortValue={sortValue}
-				searchTitle={title}
-			/>
+			<CardProduct searchTitle={title} />
 			<p className='text-[13px] p-4 opacity-60'>
 				Цены и ассортименты продуктов на сайте указаны для выбранного вами
 				региона и могут отличаться в конкретном предприятии. Наличие продуктов и

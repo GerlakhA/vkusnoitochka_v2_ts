@@ -1,37 +1,40 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { PacmanLoader } from 'react-spinners'
+import { useGlobalContext } from '../hooks/MyContext'
 import { IProduct } from '../types/GetProduct.interface'
 import { ProductService } from '../utils/services/Product.service'
 
 interface ICardProduct {
-	categoryId: number
+	// categoryId: number
 	searchTitle: string
-	sortValue: {
-		name: string
-		sortProperty: string
-	}
+	// sortValue: {
+	// 	name: string
+	// 	sortProperty: string
+	// }
 }
 
 const CardProduct: FC<ICardProduct> = ({
-	categoryId,
+	// categoryId,
 	searchTitle,
-	sortValue,
+	// sortValue,
 }) => {
-	const [open, setOpen] = useState(false)
+	// const [open, setOpen] = useState(false)
+
+	const { categoryId, sortId } = useGlobalContext()
 
 	const category = `?categories=${categoryId}`
 
 	const search = `&q=${searchTitle}`
 
-	const sortBy = sortValue.sortProperty.replace('-', '')
-	const order = sortValue.sortProperty.includes('-') ? 'asc' : 'desc'
+	const sortBy = sortId.sortProperty.replace('-', '')
+	const order = sortId.sortProperty.includes('-') ? 'asc' : 'desc'
 
 	const client = useQueryClient()
 
 	const getProduct = useQuery({
-		queryKey: ['products', categoryId, searchTitle, sortBy, order],
+		queryKey: ['products', categoryId, searchTitle, sortId],
 		queryFn: async () => {
 			const res = await axios.get<IProduct[]>(
 				`http://localhost:5500/products${category}${search}&_sort=${sortBy}&_order=${order}`
@@ -56,8 +59,9 @@ const CardProduct: FC<ICardProduct> = ({
 			</div>
 		)
 
-	const popUp = () => {
-		setOpen(!open)
+	const addToCart = (data: { image: string; title: string; price: number }) => {
+		postProduct.mutate(data)
+		alert('Товар добавлен в корзину')
 	}
 
 	return (
@@ -68,7 +72,7 @@ const CardProduct: FC<ICardProduct> = ({
 					className='w-[282px] h-[394px] p-[20px] shadow-md hover:shadow-lg  
 						cursor-pointer flex flex-col justify-start items-center
 						m-[10px] rounded-xl relative bg-bg_card border border-solid border-bg_button'
-					onClick={popUp}
+					// onClick={popUp}
 				>
 					<img src={item.image} alt='product' width={242} height={239} />
 					<h2>{item.title}</h2>
@@ -78,7 +82,7 @@ const CardProduct: FC<ICardProduct> = ({
 					</p>
 					<button
 						onClick={() =>
-							postProduct.mutate({
+							addToCart({
 								title: item.title,
 								price: item.price,
 								image: item.image,

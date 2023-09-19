@@ -1,20 +1,12 @@
 import { FC } from 'react'
+import { useGlobalContext } from '../../hooks/MyContext'
 
 interface ICategoryMenu {
-	onClickCategory: (i: number) => void
-	onClickSort: (i: number) => void
-	value: number
-	sortValue: {
-		name: string
-		sortProperty: string
-	}
+	// onClickCategory: (i: number) => void
+	// value: number
 }
 
-const CategoryMenu: FC<ICategoryMenu> = ({
-	onClickCategory,
-	onClickSort,
-	sortValue,
-}) => {
+const CategoryMenu: FC<ICategoryMenu> = () => {
 	const categories = [
 		'Новинки',
 		'Популярное',
@@ -25,6 +17,8 @@ const CategoryMenu: FC<ICategoryMenu> = ({
 		'Кафе',
 		'Завтрак',
 	]
+
+	const { onClickCategory } = useGlobalContext()
 
 	return (
 		<div className='ml-50 flex items-center w-full'>

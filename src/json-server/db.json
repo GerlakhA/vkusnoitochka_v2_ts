@@ -586,7 +586,13 @@
       "title": "Пара Биг Хит",
       "price": 299,
       "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/439/15o41l4ydvnqyh6r0l9hrxc0jtlsec0r/large.png",
-      "id": 1
+      "id": 17
+    },
+    {
+      "title": "Кидз Комбо блины с игрушкой",
+      "price": 259,
+      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/dad/tcc34a1s3y9f21vnwatmb43d0zsm230o/large.png",
+      "id": 18
     }
   ]
 }
