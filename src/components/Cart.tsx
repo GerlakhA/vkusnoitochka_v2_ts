@@ -2,6 +2,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { FC, useState } from 'react'
 import { GrClose } from 'react-icons/gr'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { ICartItem } from '../types/GetCartItem'
 
 const Cart: FC = () => {
@@ -25,16 +27,25 @@ const Cart: FC = () => {
 		},
 	})
 
-	const totalPrice = getCartItem.data?.reduce(
-		(sum, obj) => obj.price * count + sum,
-		0
-	)
+	const totalPrice = getCartItem.data?.reduce((sum, obj) => obj.price + sum, 0)
+
+	const deleteCartItemById = (id: number | string) => {
+		deleteCartItem.mutate(id)
+		toast.success('Товар успешно удален из корзины!', {
+			autoClose: 2000,
+			position: 'top-center',
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		})
+	}
 
 	return (
-		<div className='w-[1470px] h-[750px] rounded-[20px] bg-white flex flex-col justify-start items-center'>
-			<div>
-				<h5 className='text-4xl font-bold'>Корзина</h5>
-			</div>
+		<div className='rounded-[20px] bg-white flex flex-col justify-center items-center p-4 z-30'>
+			<ToastContainer />
+			<h5 className='text-4xl font-bold '>Корзина</h5>
 			{getCartItem.data?.map(item => (
 				<div
 					key={item.id}
@@ -58,7 +69,7 @@ const Cart: FC = () => {
 					<span className='ml-4'>{item.price} ₽</span>
 					<GrClose
 						className='ml-4'
-						onClick={() => deleteCartItem.mutate(item.id)}
+						onClick={() => deleteCartItemById(item.id)}
 					/>
 				</div>
 			))}

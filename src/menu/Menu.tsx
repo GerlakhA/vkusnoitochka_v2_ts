@@ -4,14 +4,7 @@ import CardProduct from '../components/CardProduct'
 import { Sort } from '../components/Sort'
 import CategoryMenu from './category/CategoryMenu'
 
-const Menu = (
-	{
-		// value,
-		// sortValue,
-		// onClickCategory,
-		// onClickSort,
-	}
-) => {
+const Menu = () => {
 	const [title, setTitle] = useState('')
 
 	return (

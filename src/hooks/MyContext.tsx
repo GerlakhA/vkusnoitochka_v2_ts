@@ -1,4 +1,4 @@
-import { FC, createContext, useContext, useState } from 'react'
+import { ChangeEvent, FC, createContext, useContext, useState } from 'react'
 
 type MyCustomContextType = {
 	categoryId: number
@@ -8,6 +8,8 @@ type MyCustomContextType = {
 		name: string
 		sortProperty: string
 	}
+	title: string
+	changeStateInput: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 interface IUseMyCustomContext {
@@ -20,6 +22,7 @@ export const useGlobalContext = () => useContext(MyGlobalContext)
 
 export const UseMyGlobalContext: FC<IUseMyCustomContext> = ({ children }) => {
 	const [categoryId, setCategoryId] = useState(0)
+	const [title, setTitle] = useState('')
 	const [sortId, setSortId] = useState({
 		name: 'по цене',
 		sortProperty: 'price',
@@ -33,9 +36,20 @@ export const UseMyGlobalContext: FC<IUseMyCustomContext> = ({ children }) => {
 		setSortId(obj)
 	}
 
+	const changeStateInput = (e: ChangeEvent<HTMLInputElement>) => {
+		setTitle(e.target.value)
+	}
+
 	return (
 		<MyGlobalContext.Provider
-			value={{ categoryId, onClickCategory, onClickSort, sortId }}
+			value={{
+				categoryId,
+				onClickCategory,
+				onClickSort,
+				sortId,
+				title,
+				changeStateInput,
+			}}
 		>
 			{children}
 		</MyGlobalContext.Provider>

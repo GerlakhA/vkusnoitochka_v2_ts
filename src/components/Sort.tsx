@@ -37,7 +37,7 @@ export const Sort = () => {
 				onClick={() => setOpen(!open)}
 				className='text-orange-500 border-b border-dashed border-orange-500'
 			>
-				{sortId.name}
+				{sortId?.name}
 			</span>
 			{open && (
 				<div className='sort__popup'>
@@ -47,7 +47,7 @@ export const Sort = () => {
 								key={i}
 								onClick={() => onClickListItem(obj)}
 								className={
-									sortId.sortProperty === obj.sortProperty ? 'active' : ''
+									sortId?.sortProperty === obj.sortProperty ? 'active' : ''
 								}
 							>
 								{obj.name}
