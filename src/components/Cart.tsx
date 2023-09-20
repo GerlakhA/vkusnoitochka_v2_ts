@@ -2,14 +2,12 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { ICartItem } from '../types/GetCartItem'
 
 const Cart: FC = () => {
-	const [count, setCount] = useState(0)
-
 	const client = useQueryClient()
 
 	const getCartItem = useQuery(['get cartItem'], async () => {
