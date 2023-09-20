@@ -1,7 +1,8 @@
+import DeleteIcon from '@mui/icons-material/Delete'
+import Button from '@mui/material/Button'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { FC, useState } from 'react'
-import { GrClose } from 'react-icons/gr'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { ICartItem } from '../types/GetCartItem'
@@ -42,37 +43,40 @@ const Cart: FC = () => {
 		})
 	}
 
+	// const onClickPlus = () => {
+	// 	setCount(count + 1)
+	// 	getCartItem.data?.reduce((sum, obj) => obj.price * count + sum, 0)
+	// }
+
 	return (
-		<div className='rounded-[20px] bg-white flex flex-col justify-center items-center p-4 z-30'>
+		<div className='min-h-full min-w-full absolute rounded-[20px] flex flex-col justify-start items-center p-4 z-30'>
 			<ToastContainer />
 			<h5 className='text-4xl font-bold '>Корзина</h5>
-			{getCartItem.data?.map(item => (
-				<div
-					key={item.id}
-					className='w-full flex justify-center items-center m-10'
-				>
-					<img src={item.image} alt='image' width={80} height={45} />
-					<h2 className='ml-4'>{item.title}</h2>
-					<button
-						onClick={() => setCount(count - 1)}
-						className='m-4 border border-red-500 rounded-full w-[25px] flex justify-center items-center text-red-500'
+			<div>
+				{getCartItem.data?.map(item => (
+					<div
+						key={`cartItem:${item.id}`}
+						className='w-full flex justify-center items-center m-10'
 					>
-						-
-					</button>
-					{count}
-					<button
-						onClick={() => setCount(count + 1)}
-						className='m-4 border border-red-500 rounded-full w-[25px] flex justify-center items-center text-red-500'
-					>
-						+
-					</button>
-					<span className='ml-4'>{item.price} ₽</span>
-					<GrClose
-						className='ml-4'
-						onClick={() => deleteCartItemById(item.id)}
-					/>
-				</div>
-			))}
+						<img src={item.image} alt='image' width={80} height={45} />
+						<h2 className='ml-4'>{item.title}</h2>
+
+						<span className='ml-4'>{item.price} ₽</span>
+						<div className='ml-20'>
+							<Button
+								variant='contained'
+								onClick={() => deleteCartItemById(item.id)}
+								startIcon={<DeleteIcon />}
+								sx={{
+									borderRadius: '10px',
+								}}
+							>
+								Delete
+							</Button>
+						</div>
+					</div>
+				))}
+			</div>
 			<span>Total Price: {totalPrice}</span>
 		</div>
 	)

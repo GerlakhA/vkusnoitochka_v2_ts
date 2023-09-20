@@ -17,7 +17,7 @@ const Header = () => {
 	return (
 		<div className={`sticky top-0 z-20 ${!top && `bg-white shadow-lg`}`}>
 			<header
-				className={`flex justify-start items-center w-full h-full p-2 sticky top-0 z-20 ${
+				className={`flex justify-start items-center w-full h-full p-2 sticky top-0 z-20${
 					!top && `bg-white shadow-lg`
 				}`}
 			>

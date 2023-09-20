@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Cart from './components/Cart'
+import { UseMyGlobalContext } from './hooks/MyContext'
 import Menu from './menu/Menu'
 import Cafe from './pages/Cafe'
 import Home from './pages/Home'
 import Offers from './pages/Offers'
-import { UseMyGlobalContext } from './hooks/MyContext'
 
 const RouterDom = () => {
 	return (

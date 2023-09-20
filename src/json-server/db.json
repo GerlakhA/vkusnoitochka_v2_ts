@@ -581,12 +581,5 @@
       "categories": 7
     }
   ],
-  "cart": [
-    {
-      "title": "Кидз Комбо блины с игрушкой",
-      "price": 259,
-      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/dad/tcc34a1s3y9f21vnwatmb43d0zsm230o/large.png",
-      "id": 1
-    }
-  ]
+  "cart": []
 }

@@ -30,6 +30,7 @@ const Menu = () => {
 			<div>
 				<CategoryMenu />
 			</div>
+
 			<CardProduct searchTitle={title} />
 			<p className='text-[13px] p-4 opacity-60'>
 				Цены и ассортименты продуктов на сайте указаны для выбранного вами
