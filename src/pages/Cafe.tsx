@@ -6,7 +6,7 @@ const Cafe = () => {
 			<img
 				src='https://vkusnoitochka.ru/pages/events/mc-cafe/coffee-bg.jpg'
 				alt='cafe'
-				className='max-w-full h-[752px]'
+				className='w-full h-[852px]'
 			/>
 			<div className='absolute left-[140px] top-[10%] w-full'>
 				<span className='text-white text-[160px] font-extrabold'>Кофе</span>

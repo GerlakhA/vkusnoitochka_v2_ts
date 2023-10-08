@@ -13,13 +13,6 @@ const offers = [
 		image:
 			'https://ma-prod-cdn.mcdonalds.ru/mechanic/deca0d77d03c494a8940cd25c75904dd/android/s/offer_image.png',
 	},
-	{
-		id: 3,
-		title: 'Пара Грибных Чикен Премьеров всего за 335 рублей',
-		description: 'Ждем тебя!',
-		image:
-			'https://ma-prod-cdn.mcdonalds.ru/mechanic/bf7e5ed63035495d92281be502870efd/android/s/offer_image.png',
-	},
 ]
 
 const CardOffers = () => {

@@ -12,15 +12,6 @@ const Category = () => {
 			<Link className='m-5 hover:opacity-60' to={'/cafe'}>
 				Кафе
 			</Link>
-			<Link className='m-5 hover:opacity-60' to={'/kids-combo'}>
-				Кидз Комбо
-			</Link>
-			<Link className='m-5 hover:opacity-60' to={'/kachestvo'}>
-				Качество
-			</Link>
-			<Link className='m-5 hover:opacity-60' to={'/novinki'}>
-				Новинки
-			</Link>
 		</div>
 	)
 }

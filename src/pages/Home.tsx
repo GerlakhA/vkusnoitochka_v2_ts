@@ -8,7 +8,10 @@ const Home = () => {
 	return (
 		<main className='w-full bg-bg_app'>
 			<div className='flex justify-center items-center mt-4 text-2xl text-black mb-20'>
-				<div className='max-w-[1200px] h-[400px]'>
+				<div
+					className='xl:max-w-[1200px] xl:h-[400px] lg:max-w-[900px] lg:h-[350px]
+				 md:max-w-[400px] md:h-[250px] sm:max-w-[200px] sm:h-[150px]'
+				>
 					<Carousel autoSlide />
 				</div>
 			</div>
