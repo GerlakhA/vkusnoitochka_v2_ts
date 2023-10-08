@@ -55,7 +55,11 @@ export default function Carousel({
 	}, [])
 
 	return (
-		<div className='overflow-hidden relative w-[1200px] h-[400px] rounded-xl'>
+		<div
+			className='overflow-hidden relative w-[1200px] h-[400px] rounded-xl
+				lg:max-w-[900px] lg:h-[350px] md:max-w-[400px] md:h-[250px]
+				 sm:max-w-[200px] sm:h-[150px]'
+		>
 			<div
 				className='flex transition-transform ease-out duration-500 w-[1200px]'
 				style={{ transform: `translateX(-${curr * 100}%)` }}
