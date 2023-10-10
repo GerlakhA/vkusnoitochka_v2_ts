@@ -1,49 +1,28 @@
 import { FC } from 'react'
+import { IProduct } from '../types/GetProduct.interface'
 
 interface IDescriptionCard {
-	id: number | string
-	description: string
-	image: string
-	title: string
-	price: number
+	data: IProduct
 }
 
-const DescriptionCard: FC<IDescriptionCard> = ({
-	id,
-	description,
-	image,
-	title,
-	price,
-}) => {
-	// const { data } = useQuery(['description'], async () => {
-	// 	const res = await axios.get<IDescription[]>(
-	// 		`http://localhost:5500/products?${id}`
-	// 	)
-	// 	return res.data
-	// })
-
+const DescriptionCard: FC<IDescriptionCard> = ({ data }) => {
 	return (
-		<div className='h-[750px] w-[1470px] bg-black z-10 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
-			{/* {data?.map(item => ( */}
-			<div
-				key={`descrition:${id}`}
-				className='h-[747px] w-[500px] bg-white z-50'
-			>
-				<img src={image} />
-				<h2>{title}</h2>
+		<div className='w-full h-full bg-black z-10 bg-opacity-25 backdrop-blur-sm'>
+			<div className='h-[747px] w-[500px] bg-white z-50'>
+				<img src={data.image} />
+				<h2>{data.title}</h2>
 				<div>
 					<p>Описание</p>
 				</div>
-				<div>{description}</div>
+				<div>{data.description}</div>
 				<div>
 					<p>Цена для города</p>
 				</div>
 				<div>
 					<p>Москва</p>
 				</div>
-				<span>{price}</span>
+				<span>{data.price}</span>
 			</div>
-			{/* ))} */}
 		</div>
 	)
 }

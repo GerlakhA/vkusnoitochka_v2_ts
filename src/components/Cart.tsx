@@ -10,7 +10,7 @@ import { ICartItem } from '../types/GetCartItem'
 const Cart: FC = () => {
 	const client = useQueryClient()
 
-	const getCartItem = useQuery(['get cartItem'], async () => {
+	const { data } = useQuery(['get cartItem'], async () => {
 		const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
 		return res.data
 	})
@@ -26,7 +26,7 @@ const Cart: FC = () => {
 		},
 	})
 
-	const totalPrice = getCartItem.data?.reduce((sum, obj) => obj.price + sum, 0)
+	const totalPrice = data?.reduce((sum, obj) => obj.price + sum, 0)
 
 	const deleteCartItemById = (id: number | string) => {
 		deleteCartItem.mutate(id)
@@ -41,17 +41,12 @@ const Cart: FC = () => {
 		})
 	}
 
-	// const onClickPlus = () => {
-	// 	setCount(count + 1)
-	// 	getCartItem.data?.reduce((sum, obj) => obj.price * count + sum, 0)
-	// }
-
 	return (
-		<div className='min-h-full min-w-full absolute rounded-[20px] flex flex-col justify-start items-center p-4 z-30'>
+		<div className='min-h-full min-w-full rounded-[20px] flex flex-col items-center p-4 z-30'>
 			<ToastContainer />
-			<h5 className='text-4xl font-bold '>Корзина</h5>
-			<div>
-				{getCartItem.data?.map(item => (
+			<div className='w-full h-full flex flex-col justify-center items-center'>
+				<h5 className='text-4xl font-bold '>Корзина</h5>
+				{data?.map(item => (
 					<div
 						key={`cartItem:${item.id}`}
 						className='w-full flex justify-center items-center m-10'
@@ -75,7 +70,9 @@ const Cart: FC = () => {
 					</div>
 				))}
 			</div>
-			<span>Total Price: {totalPrice}</span>
+			<div className='mt-40'>
+				<span>Total Price: {totalPrice}</span>
+			</div>
 		</div>
 	)
 }
