@@ -1,8 +1,5 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { FC, useState } from 'react'
-import { toast } from 'react-toastify'
 import { IProduct } from '../types/GetProduct.interface'
-import { ProductService } from '../utils/services/Product.service'
 import DescriptionCard from './DescriptionCard'
 
 interface ICardItems {
@@ -11,30 +8,6 @@ interface ICardItems {
 
 const CardItems: FC<ICardItems> = ({ data }) => {
 	const [open, setOpen] = useState(false)
-
-	const client = useQueryClient()
-
-	const postProduct = useMutation({
-		mutationKey: ['create product'],
-		mutationFn: (data: { image: string; title: string; price: number }) =>
-			ProductService.createCartItems(data),
-		onSuccess: () => {
-			client.invalidateQueries(['products'])
-		},
-	})
-
-	const addToCart = (data: { image: string; title: string; price: number }) => {
-		postProduct.mutate(data)
-		toast.success('Товар добавлен в корзину', {
-			autoClose: 2000,
-			position: 'top-center',
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			theme: 'dark',
-		})
-	}
 
 	return (
 		<div
@@ -50,20 +23,8 @@ const CardItems: FC<ICardItems> = ({ data }) => {
 					от {data.price} ₽
 				</p>
 			</div>
-			<button
-				onClick={() =>
-					addToCart({
-						title: data.title,
-						price: data.price,
-						image: data.image,
-					})
-				}
-				className='absolute right-5 top-[340px] border rounded-lg p-2 bg-orange-500'
-			>
-				B корзину
-			</button>
 
-			{open && <DescriptionCard data={data} />}
+			{open && <DescriptionCard data={data} open={open} setOpen={setOpen} />}
 		</div>
 	)
 }

@@ -40,7 +40,7 @@ const CardProduct: FC<ICardProduct> = ({ searchTitle }) => {
 		)
 
 	return (
-		<div className='flex flex-wrap justify-start items-center w-[1250px] mt-10'>
+		<div className='flex flex-wrap justify-start items-center w-full h-full mt-10'>
 			<ToastContainer />
 			{getProduct.data?.map(item => (
 				<CardItems key={item.id} data={item} />
