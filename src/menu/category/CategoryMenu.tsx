@@ -21,13 +21,13 @@ const CategoryMenu: FC<ICategoryMenu> = () => {
 	const { onClickCategory } = useGlobalContext()
 
 	return (
-		<div className='ml-50 flex items-center w-full'>
+		<div className='ml-50 flex items-center justify-start w-full'>
 			{categories &&
 				categories.map((items, i) => (
 					<div
 						key={i}
-						className='rounded-3xl hover:bg-gray-200 p-[15px] h-[44px] flex justify-center
-						items-center focus:bg-gray-500 cursor-pointer'
+						className='hover:opacity-60 focus:font-black p-[15px] h-[44px] flex justify-center
+						items-center cursor-pointer'
 						onClick={() => onClickCategory(i)}
 					>
 						{items}

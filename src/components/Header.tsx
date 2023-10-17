@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Cart from './Cart'
 import Category from './Category'
 
 const Header = () => {
 	const [top, setTop] = useState(true)
-	const [open, setOpen] = useState(false)
+	// const [open, setOpen] = useState(false)
 
 	useEffect(() => {
 		const scrollHandler = () => {
@@ -16,7 +17,7 @@ const Header = () => {
 
 	return (
 		<header
-			className={`xl:sticky top-0 z-20 w-full ${!top && `bg-white shadow-lg`}`}
+			className={`sticky top-0 z-10 w-full ${!top && `bg-white shadow-lg`}`}
 		>
 			<div className={`flex justify-start items-center w-full h-full p-2`}>
 				<div className='flex justify-start p-2 w-full ml-[100px]'>
@@ -35,11 +36,12 @@ const Header = () => {
 					</Link>
 				</div>
 				<Category />
-				<Link to={'/cart'}>
+				{/* <Link to={'/cart'}>
 					<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center ml-[44px] mr-[120px]'>
 						<button onClick={() => setOpen(!open)}>Корзина</button>
 					</div>
-				</Link>
+				</Link> */}
+				<Cart />
 			</div>
 		</header>
 	)

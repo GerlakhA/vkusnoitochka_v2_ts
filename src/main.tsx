@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import RouterDom from './RouterDom.js'
 import Header from './components/Header.js'
 import { store } from './redux/store.js'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const client = new QueryClient({
 	defaultOptions: {
@@ -18,12 +19,14 @@ const client = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Provider store={store}>
-				<QueryClientProvider client={client}>
-					<Header />
-					<RouterDom />
-				</QueryClientProvider>
-			</Provider>
+			<ChakraProvider>
+				<Provider store={store}>
+					<QueryClientProvider client={client}>
+						<Header />
+						<RouterDom />
+					</QueryClientProvider>
+				</Provider>
+			</ChakraProvider>
 		</BrowserRouter>
 	</React.StrictMode>
 )

@@ -581,5 +581,24 @@
       "categories": 7
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "title": "Кидз Комбо блины с игрушкой",
+      "price": 259,
+      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/dad/tcc34a1s3y9f21vnwatmb43d0zsm230o/large.png",
+      "id": 1
+    },
+    {
+      "title": "Бамбл кофе",
+      "price": 189,
+      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/68e/rz7zssxt7xaoui00misd8q8wba2w0dwh/large.png",
+      "id": 2
+    },
+    {
+      "title": "Биг Чикен Бургер",
+      "price": 259,
+      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/592/topo8m2e0x42dy4duy1qfkmo9se4vrur/large.png",
+      "id": 3
+    }
+  ]
 }

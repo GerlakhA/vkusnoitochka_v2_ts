@@ -20,13 +20,13 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 		mutationFn: (data: { image: string; title: string; price: number }) =>
 			ProductService.createCartItems(data),
 		onSuccess: () => {
-			client.invalidateQueries(['products'])
+			client.invalidateQueries(['get cartItem'])
 		},
 	})
 
 	const addToCart = (data: { image: string; title: string; price: number }) => {
 		postProduct.mutate(data)
-		toast.success('Товар добавлен в корзину', {
+		toast.success('Товар добавлен в корзину.', {
 			autoClose: 2000,
 			position: 'top-center',
 			closeOnClick: true,
@@ -48,17 +48,17 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 					</Dialog.Title>
 					<Dialog.Description className='max-h-[300px] overflow-y-auto overflow-hidden mt-4'>
 						<div className='w-full p-2 bg-[#f9f9f9] '>
-							<span className='opacity-50 text-sm'>Описание:</span>
+							<span className='opacity-60 text-sm'>Описание:</span>
 						</div>
 						<p className='p-2'>{data.description}</p>
 						<div className='w-full p-2 bg-[#f9f9f9] '>
-							<span className='opacity-50 text-sm'>Цена для города:</span>
+							<span className='opacity-60 text-sm'>Цена для города:</span>
 						</div>
 						<p className='p-2'>Москва</p>
 					</Dialog.Description>
 					<Dialog.Title>
 						<div className='flex flex-col justify-center items-start w-full p-2'>
-							<p>Сумма</p>
+							<p className='opacity-60'>Сумма</p>
 							<div className='flex justify-between items-center w-full'>
 								<span className='text-sm font-black'>От {data.price} ₽</span>
 								<button
@@ -69,9 +69,8 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 											image: data.image,
 										})
 									}
-									className='bg-green4 text-green11 hover:bg-green-500 focus:shadow-green7 inline-flex h-[35px] 
-								items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px]
-								focus:outline-none transition-all'
+									className='flex justify-center items-center focus:outline-none bg-green-500 w-[110px]
+									p-2 rounded-lg hover:scale-110 transition'
 								>
 									B корзину
 								</button>

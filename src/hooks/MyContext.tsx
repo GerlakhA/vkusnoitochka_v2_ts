@@ -2,6 +2,8 @@ import { FC, createContext, useContext, useState } from 'react'
 
 type MyCustomContextType = {
 	categoryId: number
+	count: number
+	setCount: (count: number) => void
 	onClickCategory: (i: number) => void
 	onClickSort: (obj: { name: string; sortProperty: string }) => void
 	sortId: {
@@ -20,6 +22,7 @@ export const useGlobalContext = () => useContext(MyGlobalContext)
 
 export const UseMyGlobalContext: FC<IUseMyCustomContext> = ({ children }) => {
 	const [categoryId, setCategoryId] = useState(0)
+	const [count, setCount] = useState(1)
 	const [sortId, setSortId] = useState({
 		name: 'по цене',
 		sortProperty: 'price',
@@ -40,6 +43,8 @@ export const UseMyGlobalContext: FC<IUseMyCustomContext> = ({ children }) => {
 				onClickCategory,
 				onClickSort,
 				sortId,
+				count,
+				setCount,
 			}}
 		>
 			{children}

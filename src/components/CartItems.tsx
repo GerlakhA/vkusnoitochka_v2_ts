@@ -1,17 +1,29 @@
-import DeleteIcon from '@mui/icons-material/Delete'
-import { Button } from '@mui/material'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { FC, useState } from 'react'
 import { toast } from 'react-toastify'
+import style from '../styles/cart.module.scss'
 import { ICartItem } from '../types/GetCartItem'
 
 interface ICartImes {
 	data: ICartItem
+	// count: number
+	// setCount: (count: number) => void
 }
 
 const CartItems: FC<ICartImes> = ({ data }) => {
 	const [count, setCount] = useState(1)
+	// const [value, setValue] = useState('')
+
+	// const getCartItem = useQuery(['get cartItem'], async () => {
+	// 	const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
+	// 	return res.data
+	// })
+
+	// const totalPriceItem = getCartItem.data?.reduce(
+	// 	(sum, obj) => sum + obj.price * count,
+	// 	0
+	// )
 
 	const client = useQueryClient()
 
@@ -41,7 +53,7 @@ const CartItems: FC<ICartImes> = ({ data }) => {
 
 	const clickMinus = () => {
 		setCount(count - 1)
-		if (count <= 1) return deleteCartItemById(data.id)
+		if (count < 2) return deleteCartItemById(data.id)
 	}
 
 	const clickPlus = () => {
@@ -49,41 +61,34 @@ const CartItems: FC<ICartImes> = ({ data }) => {
 	}
 
 	return (
-		<div className='w-full h-full flex flex-col justify-center items-center'>
-			<div className='w-full flex justify-center items-center m-10'>
-				<img src={data.image} alt='image' width={80} height={45} />
-				<h2 className='ml-4'>{data.title}</h2>
-				<div className='flex gap-x-4 justify-center items-center w-[200px]'>
+		<div className={style.item}>
+			<img src={data.image} alt={data.title} width={100} height={100} />
+			<div className='flex flex-col'>
+				<div className={style.name}>{data.title}</div>
+				<div className={style.price}>
+					{new Intl.NumberFormat('ru-RU', {
+						style: 'currency',
+						currency: 'RUB',
+						currencyDisplay: 'code',
+					}).format(data.price * count)}
+				</div>
+				<div className='w-[90px] flex justify-between items-center'>
 					<button
 						onClick={clickMinus}
-						className='rounded-full border-red-500 border w-[30px] h-[30px] text-white bg-red-500
-          flex justify-center items-center ml-5 gap-x-2 hover:scale-110 transition'
+						className='rounded-full w-6 h-6 border border-neutral-400 flex items-center justify-center'
 					>
 						-
 					</button>
-					<span className='flex items-center justify-center ml-4'>
-						{count} шт.
-					</span>
+					<span>{count}</span>
 					<button
 						onClick={clickPlus}
-						className='rounded-full border-red-500 border w-[30px] h-[30px] text-white bg-red-500
-          flex justify-center items-center ml-5 gap-x-2 hover:scale-110 transition'
+						className='rounded-full w-6 h-6 border border-neutral-400 flex items-center justify-center'
 					>
 						+
 					</button>
 				</div>
-				<span className='ml-10'>{data.price} ₽</span>
-				<div className='ml-10'>
-					<Button
-						variant='contained'
-						onClick={() => deleteCartItemById(data.id)}
-						startIcon={<DeleteIcon />}
-						sx={{
-							borderRadius: '10px',
-						}}
-					>
-						Delete
-					</Button>
+				<div className='mt-2 items-center text-red-500 hover:scale-110 hover:font-semibold ease-in-out transition duration-[250ms]'>
+					<button onClick={() => deleteCartItemById(data.id)}>Remove</button>
 				</div>
 			</div>
 		</div>

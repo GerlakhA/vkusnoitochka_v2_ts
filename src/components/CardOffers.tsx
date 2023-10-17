@@ -21,7 +21,7 @@ const CardOffers = () => {
 			{offers.map(item => (
 				<div
 					key={item.id}
-					className='w-[384px] h-[200px] rounded-xl mt-10 relative p-5 border-l-8 border-orange-500 shadow-xl z-[2px]'
+					className='w-[384px] h-[200px] rounded-xl mt-10 relative p-5 border-l-8 border-orange-500 shadow-xl'
 				>
 					<h1 className='font-extrabold'>{item.title}</h1>
 					<p className='text-[12px]'>{item.description}</p>
