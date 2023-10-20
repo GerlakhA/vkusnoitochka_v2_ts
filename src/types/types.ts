@@ -4,7 +4,6 @@ export interface ICartItem {
 	image: string
 	price: number
 	quantity: number
-	product?: IProduct
 }
 
 export type ICategory = {
@@ -15,13 +14,6 @@ export type ICategory = {
 export interface IDescription {
 	id: number
 	description: string
-	title: string
-	image: string
-	price: number
-}
-
-export interface ICreateCartItem {
-	id: number
 	title: string
 	image: string
 	price: number

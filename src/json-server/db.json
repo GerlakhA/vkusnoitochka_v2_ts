@@ -647,20 +647,5 @@
       "quantity": 1
     }
   ],
-  "cart": [
-    {
-      "title": "Бамбл кофе",
-      "price": 189,
-      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/68e/rz7zssxt7xaoui00misd8q8wba2w0dwh/large.png",
-      "quantity": 1,
-      "id": 1
-    },
-    {
-      "title": "Раф французский десерт",
-      "price": 195,
-      "image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/02b/gphmzboqr4egg3jxfan12w76jjia8eo8/large.png",
-      "quantity": 1,
-      "id": 2
-    }
-  ]
+  "cart": []
 }

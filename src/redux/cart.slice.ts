@@ -1,4 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 import { ICartItem } from '../types/types'
 
 export interface CartState {
@@ -6,25 +8,7 @@ export interface CartState {
 }
 
 const initialState: CartState = {
-	items: [
-		{
-			id: 41,
-			title: 'Картофель Фри',
-			price: 65,
-			image:
-				'https://vkusnoitochka.ru/resize/484x478/upload/iblock/738/cd5wbp50q12811jgigioi2gi2ty0z40m/large.png',
-
-			quantity: 1,
-		},
-		{
-			id: 42,
-			title: 'Картофельные Дольки',
-			price: 99,
-			image:
-				'https://vkusnoitochka.ru/resize/484x478/upload/iblock/5cc/fbttkjji7cqtegmil2qxckf5ws6d0imu/large.png',
-			quantity: 1,
-		},
-	],
+	items: [],
 }
 
 export const cartSlice = createSlice({
@@ -35,7 +19,15 @@ export const cartSlice = createSlice({
 			state,
 			action: PayloadAction<{ id: number; types: string }>
 		) => {
+			const { data } = useQuery({
+				queryKey: ['get cartItem'],
+				queryFn: async () => {
+					const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
+					return res.data
+				},
+			})
 			const { id, types } = action.payload
+			state.items = data
 			const items = state.items?.find(item => item.id === id)
 			if (items) types === 'plus' ? items.quantity++ : items.quantity--
 			if (items?.quantity && items.quantity < 2) items.quantity = 1

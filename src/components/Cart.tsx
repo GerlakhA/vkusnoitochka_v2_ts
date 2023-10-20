@@ -16,46 +16,40 @@ import style from '../styles/cart.module.scss'
 import { ICartItem } from '../types/types'
 import CartItems from './CartItems'
 
-interface ICart {
-	// count: number
-	// setCount: (count: number) => void
-}
-
-const Cart: FC<ICart> = ({}) => {
-	// const { count, setCount } = useGlobalContext()
-	// const data = useSelector((state: TypeRootState) => state.cart.items)
-	const { data } = useQuery(['get cartItem'], async () => {
-		const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
-		return res.data
+const Cart: FC = ({}) => {
+	const { data } = useQuery({
+		queryKey: ['get cartItem'],
+		queryFn: async () => {
+			const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
+			return res.data
+		},
 	})
 	const [open, setOpen] = useState(false)
-	const [items, setItems] = useState(data)
-	// console.log(items)
-
 	const btnRef = useRef<HTMLButtonElement>(null)
-	// const [count, setCount] = useState(1)
 
 	const totalPrice = data?.reduce(
 		(sum, obj) => sum + obj.price * obj.quantity,
 		0
 	)
 
-	const lengthProducts = items?.reduce((acc, obj) => acc + obj.quantity, 0)
+	const lengthProducts = data?.reduce((acc, obj) => acc + obj.quantity, 0)
 
-	const handleUpdateQuantity = (id: number, operation: string) => {
-		setItems(
-			items?.map(item => {
-				if (item.id === id && operation === 'minus') {
-					item.quantity--
-				} else {
-					if (item.id === id && operation === 'plus') {
-						item.quantity++
-					}
+	const handleUpdateDataQuantity = (id: number, operation: string) => {
+		data?.map(item => {
+			if (item.id === id && operation === 'minus') {
+				item.quantity--
+			} else {
+				if (item.id === id && operation === 'plus') {
+					item.quantity++
 				}
-				console.log(`price: ${item.quantity * item.price}`, id)
+				console.log(
+					`name: ${item.title} price: ${item.quantity * item.price} quantity: ${
+						item.quantity
+					}`
+				)
 				return item
-			})
-		)
+			}
+		})
 	}
 
 	return (
@@ -93,15 +87,17 @@ const Cart: FC<ICart> = ({}) => {
 
 					<DrawerBody>
 						<div className={style.cart}>
-							{data?.map(item => (
-								<CartItems
-									key={item.id}
-									data={item}
-									// items={items}
-									// setItems={setItems}
-									handleUpdateQuantity={handleUpdateQuantity}
-								/>
-							))}
+							{data?.length ? (
+								data?.map(item => (
+									<CartItems
+										key={item.id}
+										data={item}
+										handleUpdateDataQuantity={handleUpdateDataQuantity}
+									/>
+								))
+							) : (
+								<div>Кориза пуста</div>
+							)}
 						</div>
 					</DrawerBody>
 
