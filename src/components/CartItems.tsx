@@ -1,35 +1,21 @@
+import { Button, HStack } from '@chakra-ui/react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { toast } from 'react-toastify'
-import style from '../styles/cart.module.scss'
-import { ICartItem } from '../types/GetCartItem'
+import { ICartItem } from '../types/types'
 
-interface ICartImes {
+interface ICartItems {
 	data: ICartItem
-	// count: number
-	// setCount: (count: number) => void
+	handleUpdateQuantity: (id: number, operation: string) => void
 }
 
-const CartItems: FC<ICartImes> = ({ data }) => {
-	const [count, setCount] = useState(1)
-	// const [value, setValue] = useState('')
-
-	// const getCartItem = useQuery(['get cartItem'], async () => {
-	// 	const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
-	// 	return res.data
-	// })
-
-	// const totalPriceItem = getCartItem.data?.reduce(
-	// 	(sum, obj) => sum + obj.price * count,
-	// 	0
-	// )
-
+const CartItems: FC<ICartItems> = ({ data, handleUpdateQuantity }) => {
 	const client = useQueryClient()
 
 	const deleteCartItem = useMutation({
-		mutationKey: ['delete item'],
-		mutationFn: async (id: number | string) => {
+		mutationKey: ['delete item', data.id],
+		mutationFn: async (id: number) => {
 			const res = await axios.delete(`http://localhost:5500/cart/${id}`)
 			return res.data
 		},
@@ -38,7 +24,7 @@ const CartItems: FC<ICartImes> = ({ data }) => {
 		},
 	})
 
-	const deleteCartItemById = (id: number | string) => {
+	const deleteCartItemById = (id: number) => {
 		deleteCartItem.mutate(id)
 		toast.success('Товар успешно удален из корзины!', {
 			autoClose: 2000,
@@ -51,46 +37,48 @@ const CartItems: FC<ICartImes> = ({ data }) => {
 		})
 	}
 
-	const clickMinus = () => {
-		setCount(count - 1)
-		if (count < 2) return deleteCartItemById(data.id)
-	}
+	// const clickMinus = (id: number) => {
+	// 	setItems(
+	// 		items?.map(item => {
+	// 			if (item.id === id) {
+	// 				item.quantity--
+	// 			}
+	// 			return item
+	// 		})
+	// 	)
+	// 	// console.log('click', id)
+	// }
 
-	const clickPlus = () => {
-		setCount(count + 1)
-	}
+	// const clickPlus = (id: number) => {
+	// 	setItems(
+	// 		items?.map(item => {
+	// 			if (item.id === id) {
+	// 				item.quantity++
+	// 			}
+	// 			return item
+	// 		})
+	// 	)
+	// 	console.log('click', id)
+	// }
 
 	return (
-		<div className={style.item}>
+		<div key={data.id}>
 			<img src={data.image} alt={data.title} width={100} height={100} />
-			<div className='flex flex-col'>
-				<div className={style.name}>{data.title}</div>
-				<div className={style.price}>
-					{new Intl.NumberFormat('ru-RU', {
-						style: 'currency',
-						currency: 'RUB',
-						currencyDisplay: 'code',
-					}).format(data.price * count)}
-				</div>
-				<div className='w-[90px] flex justify-between items-center'>
-					<button
-						onClick={clickMinus}
-						className='rounded-full w-6 h-6 border border-neutral-400 flex items-center justify-center'
-					>
-						-
-					</button>
-					<span>{count}</span>
-					<button
-						onClick={clickPlus}
-						className='rounded-full w-6 h-6 border border-neutral-400 flex items-center justify-center'
-					>
-						+
-					</button>
-				</div>
-				<div className='mt-2 items-center text-red-500 hover:scale-110 hover:font-semibold ease-in-out transition duration-[250ms]'>
-					<button onClick={() => deleteCartItemById(data.id)}>Remove</button>
-				</div>
-			</div>
+			<h2>{data.title}</h2>
+			<p>{data.price * data.quantity} RUB.</p>
+			<HStack>
+				<Button
+					backgroundColor={'red.400'}
+					onClick={() => handleUpdateQuantity(data.id, 'minus')}
+				>
+					-
+				</Button>
+				<span>{data.quantity}</span>
+				<Button onClick={() => handleUpdateQuantity(data.id, 'plus')}>+</Button>
+				<Button variant={'link'} onClick={() => deleteCartItemById(data.id)}>
+					Remove
+				</Button>
+			</HStack>
 		</div>
 	)
 }

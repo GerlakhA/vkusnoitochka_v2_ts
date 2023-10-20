@@ -5,7 +5,6 @@ import Category from './Category'
 
 const Header = () => {
 	const [top, setTop] = useState(true)
-	// const [open, setOpen] = useState(false)
 
 	useEffect(() => {
 		const scrollHandler = () => {
@@ -36,11 +35,6 @@ const Header = () => {
 					</Link>
 				</div>
 				<Category />
-				{/* <Link to={'/cart'}>
-					<div className='bg-bg_button rounded-[50px] w-[90px] h-[51px] flex justify-center items-center ml-[44px] mr-[120px]'>
-						<button onClick={() => setOpen(!open)}>Корзина</button>
-					</div>
-				</Link> */}
 				<Cart />
 			</div>
 		</header>

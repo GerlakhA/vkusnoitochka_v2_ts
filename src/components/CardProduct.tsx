@@ -5,7 +5,7 @@ import { PacmanLoader } from 'react-spinners'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useGlobalContext } from '../hooks/MyContext'
-import { IProduct } from '../types/GetProduct.interface'
+import { IProduct } from '../types/types'
 import CardItems from './CardItems'
 
 interface ICardProduct {

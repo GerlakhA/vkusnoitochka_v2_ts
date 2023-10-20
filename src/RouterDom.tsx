@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import Cart from './components/Cart'
+import Orders from './components/Orders'
 import { UseMyGlobalContext } from './hooks/MyContext'
 import Menu from './menu/Menu'
 import Cafe from './pages/Cafe'
@@ -14,7 +14,7 @@ const RouterDom = () => {
 				<Route element={<Home />} path={'/'} />
 				<Route element={<Offers />} path={'/offers'} />
 				<Route element={<Cafe />} path={'/cafe'} />
-				<Route element={<Cart />} path={'/cart'} />
+				<Route element={<Orders />} path={'/orders'} />
 				<Route element={<div>Page Not Found Sorry</div>} path={'*'} />
 			</Routes>
 		</UseMyGlobalContext>

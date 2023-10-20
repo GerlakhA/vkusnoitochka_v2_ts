@@ -1,10 +1,10 @@
 const offers = [
 	{
 		id: 1,
-		title: 'Наггетсы (4 шт) всего за 1 рубль',
-		description: 'При покупке от 369 рублей',
+		title: 'Сырные треугольники Чоризо всего за 85 рублей',
+		description: 'Успей купить!',
 		image:
-			'https://ma-prod-cdn.mcdonalds.ru/mechanic/a0edde9fe0b844419e674c94a0753e6f/android/s/offer_image.png',
+			'https://vkusnoitochka.ru/resize/484x478/upload/iblock/935/z08w9yisjolw9hp3odof1x2w4gm5pucq/large.png',
 	},
 	{
 		id: 2,
@@ -17,13 +17,13 @@ const offers = [
 
 const CardOffers = () => {
 	return (
-		<div className='w-[1200px] flex justify-start mb-[50px] gap-7 relative'>
+		<div className='w-full flex justify-start mb-[50px] gap-7 relative'>
 			{offers.map(item => (
 				<div
 					key={item.id}
 					className='w-[384px] h-[200px] rounded-xl mt-10 relative p-5 border-l-8 border-orange-500 shadow-xl'
 				>
-					<h1 className='font-extrabold'>{item.title}</h1>
+					<h1 className='font-extrabold w-[250px]'>{item.title}</h1>
 					<p className='text-[12px]'>{item.description}</p>
 					<img
 						src={item.image}

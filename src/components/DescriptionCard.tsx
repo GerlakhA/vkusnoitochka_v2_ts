@@ -3,7 +3,7 @@ import { Cross2Icon } from '@radix-ui/react-icons'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { FC } from 'react'
 import { toast } from 'react-toastify'
-import { IProduct } from '../types/GetProduct.interface'
+import { IProduct } from '../types/types'
 import { ProductService } from '../utils/services/Product.service'
 
 interface IDescriptionCard {
@@ -17,14 +17,23 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 
 	const postProduct = useMutation({
 		mutationKey: ['create product'],
-		mutationFn: (data: { image: string; title: string; price: number }) =>
-			ProductService.createCartItems(data),
+		mutationFn: (data: {
+			image: string
+			title: string
+			price: number
+			quantity: number
+		}) => ProductService.createCartItems(data),
 		onSuccess: () => {
 			client.invalidateQueries(['get cartItem'])
 		},
 	})
 
-	const addToCart = (data: { image: string; title: string; price: number }) => {
+	const addToCart = (data: {
+		image: string
+		title: string
+		price: number
+		quantity: number
+	}) => {
 		postProduct.mutate(data)
 		toast.success('Товар добавлен в корзину.', {
 			autoClose: 2000,
@@ -67,6 +76,7 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 											title: data.title,
 											price: data.price,
 											image: data.image,
+											quantity: data.quantity,
 										})
 									}
 									className='flex justify-center items-center focus:outline-none bg-green-500 w-[110px]

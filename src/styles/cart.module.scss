@@ -13,7 +13,7 @@
 	@apply p-5;
 
 	.item {
-		@apply mb-4 flex items-center gap-6;
+		@apply mb-8 flex items-center gap-4;
 	}
 
 	.name {
@@ -21,6 +21,16 @@
 	}
 
 	.price {
+		@apply text-neutral-400 text-sm;
+	}
+}
+
+.footer {
+	> div:first-child {
 		@apply text-neutral-400;
+	}
+
+	> div:last-child {
+		@apply font-semibold;
 	}
 }

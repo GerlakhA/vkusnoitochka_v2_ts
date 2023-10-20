@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { IProduct } from '../types/GetProduct.interface'
+import { IProduct } from '../types/types'
 import DescriptionCard from './DescriptionCard'
 
 interface ICardItems {
@@ -16,7 +16,7 @@ const CardItems: FC<ICardItems> = ({ data }) => {
 			m-[10px] rounded-xl relative bg-bg_card border border-solid border-bg_button'
 		>
 			<div onClick={() => setOpen(!open)}>
-				<img src={data.image} alt='product' width={242} height={239} />
+				<img src={data.image} alt={data.title} width={242} height={239} />
 				<h2>{data.title}</h2>
 				<p className='absolute left-5 top-[337px] text-[12px]'>{data.size}</p>
 				<p className='absolute left-5 top-[350px] font-bold'>
