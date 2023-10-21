@@ -10,13 +10,23 @@ import {
 } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { FC, useRef, useState } from 'react'
+import { FC, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
+import { changeOpenModal } from '../redux/modal.slice'
+import { TypeRootState } from '../redux/store'
 import style from '../styles/cart.module.scss'
 import { ICartItem } from '../types/types'
 import CartItems from './CartItems'
 
 const Cart: FC = ({}) => {
+	const open = useSelector((state: TypeRootState) => state.modal.openModal)
+	const dispatch = useDispatch()
+	const btnRef = useRef<HTMLButtonElement>(null)
+
+	// const client = useQueryClient()
+
 	const { data } = useQuery({
 		queryKey: ['get cartItem'],
 		queryFn: async () => {
@@ -24,8 +34,6 @@ const Cart: FC = ({}) => {
 			return res.data
 		},
 	})
-	const [open, setOpen] = useState(false)
-	const btnRef = useRef<HTMLButtonElement>(null)
 
 	const totalPrice = data?.reduce(
 		(sum, obj) => sum + obj.price * obj.quantity,
@@ -34,23 +42,26 @@ const Cart: FC = ({}) => {
 
 	const lengthProducts = data?.reduce((acc, obj) => acc + obj.quantity, 0)
 
-	const handleUpdateDataQuantity = (id: number, operation: string) => {
-		data?.map(item => {
-			if (item.id === id && operation === 'minus') {
-				item.quantity--
-			} else {
-				if (item.id === id && operation === 'plus') {
-					item.quantity++
-				}
-				console.log(
-					`name: ${item.title} price: ${item.quantity * item.price} quantity: ${
-						item.quantity
-					}`
-				)
-				return item
-			}
-		})
-	}
+	// const addToOrders = useMutation({
+	// 	mutationKey: ['addToOrders'],
+	// 	mutationFn: async (data: IOrders) => ProductService.addToOrders(data),
+	// 	onSuccess: () => {
+	// 		client.invalidateQueries(['orders'])
+	// 	},
+	// })
+
+	// const ordersItems = (ordersItem: IOrders) => {
+	// 	addToOrders.mutate({
+	// 		image: ordersItem?.image,
+	// 		price: ordersItem?.price,
+	// 		quantity: ordersItem?.quantity,
+	// 		id: ordersItem?.id,
+	// 		title: ordersItem?.title,
+	// 	})
+
+	// 	toast.success('Заказ успешно оформлен!')
+	// 	console.log(addToOrders?.data)
+	// }
 
 	return (
 		<>
@@ -61,7 +72,7 @@ const Cart: FC = ({}) => {
 			>
 				<button
 					ref={btnRef}
-					onClick={() => setOpen(!open)}
+					onClick={() => dispatch(changeOpenModal())}
 					className='flex items-center justify-center'
 				>
 					Корзина
@@ -76,13 +87,13 @@ const Cart: FC = ({}) => {
 			<Drawer
 				isOpen={open}
 				placement='right'
-				onClose={() => setOpen(!open)}
+				onClose={() => dispatch(changeOpenModal())}
 				finalFocusRef={btnRef}
 			>
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton />
-					<DrawerCloseButton onClick={() => setOpen(!open)} />
+					<DrawerCloseButton onClick={() => dispatch(changeOpenModal())} />
 					<DrawerHeader>Корзина</DrawerHeader>
 
 					<DrawerBody>
@@ -92,15 +103,27 @@ const Cart: FC = ({}) => {
 									<CartItems
 										key={item.id}
 										data={item}
-										handleUpdateDataQuantity={handleUpdateDataQuantity}
+										totalPrice={totalPrice}
 									/>
 								))
 							) : (
-								<div>Кориза пуста</div>
+								<div className='flex flex-col items-center justify-center gap-y-10 w-full h-full'>
+									<p className='text-3xl font-semibold'>Кориза пуста 😔</p>
+									<img src='../../src/assets/empty-cart.png' />
+									<p>
+										Чтобы сделать заказ, перейдите на главную или на страницу{' '}
+										<Link
+											to={'/menu'}
+											onClick={() => dispatch(changeOpenModal())}
+											className='text-lg text-blue-600 border-b border-b-blue-600'
+										>
+											меню.
+										</Link>
+									</p>
+								</div>
 							)}
 						</div>
 					</DrawerBody>
-
 					<DrawerFooter
 						justifyContent={'space-between'}
 						className='border-t border-t-neutral-100'
@@ -109,7 +132,9 @@ const Cart: FC = ({}) => {
 							<div>Общая сумма:</div>
 							<div>{totalPrice} RUB.</div>
 						</div>
-						<Button colorScheme='green'>Checkout</Button>
+						<Button colorScheme='green' onClick={() => {}}>
+							Checkout
+						</Button>
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>

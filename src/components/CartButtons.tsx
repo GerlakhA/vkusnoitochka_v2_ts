@@ -7,6 +7,8 @@ import { ProductService } from '../utils/services/Product.service'
 interface ICartActions {
 	data: ICartItem
 	deleteCartItemById: (id: number) => void
+	totalPrice: number | undefined
+	// ordersItem: (data: IOrders) => void
 }
 
 const CartActions: FC<ICartActions> = ({ data, deleteCartItemById }) => {

@@ -1,4 +1,4 @@
-import cartSlice from '../redux/cart.slice'
+import cartSlice from '../redux/modal.slice'
 
 const rootAction = {
 	...cartSlice.actions,

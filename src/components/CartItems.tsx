@@ -9,10 +9,10 @@ import CartButtons from './CartButtons'
 
 interface ICartItems {
 	data: ICartItem
-	handleUpdateDataQuantity: (id: number, operation: string) => void
+	totalPrice: number | undefined
 }
 
-const CartItems: FC<ICartItems> = ({ data }) => {
+const CartItems: FC<ICartItems> = ({ data, totalPrice }) => {
 	const client = useQueryClient()
 
 	const deleteCartItem = useMutation({
@@ -45,7 +45,11 @@ const CartItems: FC<ICartItems> = ({ data }) => {
 					{FormatCurrency(data.price * data.quantity)}
 				</div>
 
-				<CartButtons data={data} deleteCartItemById={deleteCartItemById} />
+				<CartButtons
+					data={data}
+					deleteCartItemById={deleteCartItemById}
+					totalPrice={totalPrice}
+				/>
 			</div>
 		</div>
 	)

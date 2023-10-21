@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ICartItem, IDescription, IProduct } from '../../types/types'
+import { ICartItem, IDescription, IOrders, IProduct } from '../../types/types'
 
 axios.defaults.baseURL = 'http://localhost:5500'
 
@@ -25,6 +25,15 @@ export const ProductService = {
 
 	async deletCartItemById(id: number) {
 		const res = await axios.delete(`/cart/${id}`)
+		return res.data
+	},
+
+	async addToOrders(data: IOrders) {
+		return await axios.post(`/orders`, data)
+	},
+
+	async getAllOrders() {
+		const res = await axios.get<IOrders[]>(`/orders`)
 		return res.data
 	},
 }

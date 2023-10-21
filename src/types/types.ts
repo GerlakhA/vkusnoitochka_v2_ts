@@ -29,3 +29,11 @@ export interface IProduct {
 	size?: string
 	quantity: number
 }
+
+export interface IOrders {
+	id: number
+	title: string
+	image: string
+	price: number
+	quantity: number
+}
