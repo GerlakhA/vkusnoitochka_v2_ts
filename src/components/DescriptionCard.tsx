@@ -24,12 +24,7 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 		},
 	})
 
-	const addToCart = (data: {
-		image: string
-		title: string
-		price: number
-		quantity: number
-	}) => {
+	const addToCart = (data: Omit<ICartItem, 'id'>) => {
 		postProduct.mutate(data)
 		toast.success('Товар добавлен в корзину.', {
 			autoClose: 2000,
@@ -60,6 +55,13 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 							<span className='opacity-60 text-sm'>Цена для города:</span>
 						</div>
 						<p className='p-2'>Москва</p>
+						<div>
+							<div className='w-full p-2 bg-[#f9f9f9]'>
+								<div className='flex items-center gap-2'>
+									<p>В приложении ты можешь заказать этот продукт</p>
+								</div>
+							</div>
+						</div>
 					</Dialog.Description>
 					<Dialog.Title>
 						<div className='flex flex-col justify-center items-start w-full p-2'>

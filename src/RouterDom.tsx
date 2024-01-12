@@ -13,7 +13,10 @@ const RouterDom = () => {
 				<Route element={<Menu />} path={'/menu'} />
 				<Route element={<Home />} path={'/'} />
 				<Route element={<Offers />} path={'/offers'} />
-				<Route element={<Cafe />} path={'/cafe'} />
+				<Route
+					element={<Cafe autoSlide={true} autoSlideInterval={2500} />}
+					path={'/cafe'}
+				/>
 				<Route element={<Orders />} path={'/orders'} />
 				<Route element={<div>Page Not Found Sorry</div>} path={'*'} />
 			</Routes>

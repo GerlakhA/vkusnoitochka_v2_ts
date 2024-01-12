@@ -2,22 +2,22 @@ import {
 	Button,
 	Drawer,
 	DrawerBody,
-	DrawerCloseButton,
 	DrawerContent,
 	DrawerFooter,
 	DrawerHeader,
 	DrawerOverlay,
 } from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { FC, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { changeOpenModal } from '../redux/modal.slice'
 import { TypeRootState } from '../redux/store'
 import style from '../styles/cart.module.scss'
-import { ICartItem } from '../types/types'
+import { ICartItem, IOrders } from '../types/types'
 import CartItems from './CartItems'
 
 const Cart: FC = ({}) => {
@@ -25,9 +25,9 @@ const Cart: FC = ({}) => {
 	const dispatch = useDispatch()
 	const btnRef = useRef<HTMLButtonElement>(null)
 
-	// const client = useQueryClient()
+	const client = useQueryClient()
 
-	const { data } = useQuery({
+	const cartItems = useQuery({
 		queryKey: ['get cartItem'],
 		queryFn: async () => {
 			const res = await axios.get<ICartItem[]>('http://localhost:5500/cart')
@@ -35,33 +35,43 @@ const Cart: FC = ({}) => {
 		},
 	})
 
-	const totalPrice = data?.reduce(
+	const totalPrice = cartItems.data?.reduce(
 		(sum, obj) => sum + obj.price * obj.quantity,
 		0
 	)
 
-	const lengthProducts = data?.reduce((acc, obj) => acc + obj.quantity, 0)
+	const lengthProducts = cartItems.data?.reduce(
+		(acc, obj) => acc + obj.quantity,
+		0
+	)
 
-	// const addToOrders = useMutation({
-	// 	mutationKey: ['addToOrders'],
-	// 	mutationFn: async (data: IOrders) => ProductService.addToOrders(data),
-	// 	onSuccess: () => {
-	// 		client.invalidateQueries(['orders'])
-	// 	},
-	// })
+	const addToOrders = useMutation({
+		mutationKey: ['addToOrders'],
+		mutationFn: async (data: Omit<IOrders, 'id'>) =>
+			await axios.post(`/orders`, data),
+		onSuccess: () => {
+			client.invalidateQueries(['orders'])
+		},
+	})
 
-	// const ordersItems = (ordersItem: IOrders) => {
-	// 	addToOrders.mutate({
-	// 		image: ordersItem?.image,
-	// 		price: ordersItem?.price,
-	// 		quantity: ordersItem?.quantity,
-	// 		id: ordersItem?.id,
-	// 		title: ordersItem?.title,
-	// 	})
-
-	// 	toast.success('Заказ успешно оформлен!')
-	// 	console.log(addToOrders?.data)
-	// }
+	const ordersItems = (data: Omit<IOrders, 'id'>) => {
+		addToOrders.mutate({
+			image: data.image,
+			price: data.price,
+			quantity: data.quantity,
+			title: data.title,
+		})
+		toast.success('Заказ успешно оформлен!', {
+			autoClose: 2000,
+			position: 'top-center',
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		})
+		console.log(data)
+	}
 
 	return (
 		<>
@@ -79,7 +89,7 @@ const Cart: FC = ({}) => {
 				</button>
 				<span
 					className='absolute w-4 h-4 bg-red-500 rounded-full text-white
-				right-0 top-0 flex items-center justify-center text-sm font-semibold'
+					right-0 top-0 flex items-center justify-center text-sm font-semibold'
 				>
 					{lengthProducts}
 				</span>
@@ -90,21 +100,23 @@ const Cart: FC = ({}) => {
 				onClose={() => dispatch(changeOpenModal())}
 				finalFocusRef={btnRef}
 			>
+				<ToastContainer />
 				<DrawerOverlay />
 				<DrawerContent>
-					<DrawerCloseButton />
-					<DrawerCloseButton onClick={() => dispatch(changeOpenModal())} />
 					<DrawerHeader>Корзина</DrawerHeader>
-
 					<DrawerBody>
 						<div className={style.cart}>
-							{data?.length ? (
-								data?.map(item => (
-									<CartItems
-										key={item.id}
-										data={item}
-										totalPrice={totalPrice}
-									/>
+							{cartItems.data?.length ? (
+								cartItems.isSuccess &&
+								cartItems.data?.map(item => (
+									<>
+										<CartItems
+											key={item.id}
+											data={item}
+											totalPrice={totalPrice}
+										/>
+										<span>hello</span>
+									</>
 								))
 							) : (
 								<div className='flex flex-col items-center justify-center gap-y-10 w-full h-full'>
@@ -124,18 +136,30 @@ const Cart: FC = ({}) => {
 							)}
 						</div>
 					</DrawerBody>
-					<DrawerFooter
-						justifyContent={'space-between'}
-						className='border-t border-t-neutral-100'
-					>
-						<div className={style.footer}>
-							<div>Общая сумма:</div>
-							<div>{totalPrice} RUB.</div>
-						</div>
-						<Button colorScheme='green' onClick={() => {}}>
-							Checkout
-						</Button>
-					</DrawerFooter>
+					{!!cartItems.data?.length ? (
+						<DrawerFooter
+							justifyContent={'space-between'}
+							className='border-t border-t-neutral-100'
+						>
+							<div className={style.footer}>
+								<div>Общая сумма:</div>
+								<div>{cartItems?.data?.length ? totalPrice : null} RUB.</div>
+							</div>
+							<Button
+								colorScheme='green'
+								onClick={() =>
+									ordersItems({
+										title: data?.title,
+										price: data?.price,
+										image: data?.image,
+										quantity: data?.quantity,
+									})
+								}
+							>
+								Checkout
+							</Button>
+						</DrawerFooter>
+					) : null}
 				</DrawerContent>
 			</Drawer>
 		</>

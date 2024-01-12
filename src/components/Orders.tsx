@@ -1,7 +1,16 @@
+import {
+	Table,
+	TableCaption,
+	TableContainer,
+	Tbody,
+	Th,
+	Thead,
+	Tr,
+} from '@chakra-ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { PacmanLoader } from 'react-spinners'
 import { ProductService } from '../utils/services/Product.service'
-import OrdersItem from './OrdersItem'
+import TableOrdersItem from './TableOrdersItem'
 
 const Orders = () => {
 	const { data, isSuccess, isLoading } = useQuery(['orders'], async () =>
@@ -16,9 +25,24 @@ const Orders = () => {
 		)
 
 	return (
-		<div>
-			{isSuccess && data?.map(item => <OrdersItem key={item.id} data={item} />)}
-		</div>
+		<TableContainer padding={120}>
+			<Table variant='simple'>
+				<TableCaption>Информация о ваших заказах</TableCaption>
+				<Thead>
+					<Tr>
+						<Th>Заказ</Th>
+						<Th>Товар</Th>
+						<Th>Количество</Th>
+						<Th>Цена</Th>
+						<Th>Дата покупки</Th>
+					</Tr>
+				</Thead>
+				<Tbody>
+					{isSuccess &&
+						data.map(item => <TableOrdersItem key={item.id} data={item} />)}
+				</Tbody>
+			</Table>
+		</TableContainer>
 	)
 }
 

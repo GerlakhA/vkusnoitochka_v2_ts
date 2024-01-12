@@ -28,7 +28,7 @@ export const ProductService = {
 		return res.data
 	},
 
-	async addToOrders(data: IOrders) {
+	async createOrdersItems(data: Omit<IOrders, 'id'>) {
 		return await axios.post(`/orders`, data)
 	},
 
