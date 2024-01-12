@@ -412,16 +412,6 @@
 			"quantity": 1
 		},
 		{
-			"id": 50,
-			"title": "Овощной салат",
-			"price": 109,
-			"image": "https://vkusnoitochka.ru/resize/324x324/upload/iblock/5ed/7vm0uktb1ejxqhus8iool9i3d9soo02u/large.png",
-			"description": "Хрустящие листья салата Айсберг, сочные томаты черри и маслины",
-			"size": "121 г",
-			"categories": 5,
-			"quantity": 1
-		},
-		{
 			"id": 51,
 			"title": "Чикен Хит Грибной",
 			"price": 129,
@@ -535,46 +525,6 @@
 			"description": "Мягкий сливочный сыр на песочной основе, сверху украшен клубникой в желе",
 			"size": "119 г",
 			"categories": 6,
-			"quantity": 1
-		},
-		{
-			"id": 63,
-			"title": "Маффин с яйцом и ростбифом Комбо",
-			"price": 274,
-			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/a55/76rf1y6jmc7xbnhb9nsg5fmujuhxn2oo/large.png",
-			"description": "Комбо состоит из Маффина с яйцом и ростбифом, Картофеля (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
-			"size": "Стандартный",
-			"categories": 7,
-			"quantity": 1
-		},
-		{
-			"id": 64,
-			"title": "Яичница с ветчиной Комбо",
-			"price": 280,
-			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/84e/sse0m3puhtspc8lswqzqvxakc463tf9c/large.png",
-			"description": "Комбо состоит из Яичницы с ветчиной, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
-			"size": "Стандартный",
-			"categories": 7,
-			"quantity": 1
-		},
-		{
-			"id": 65,
-			"title": "Яичница с беконом Комбо",
-			"price": 280,
-			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/db4/d76adm8f7vs0f2396eez17vkcu7d7tpy/large.png",
-			"description": "Комбо состоит из Яичницы с беконом, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
-			"size": "Стандартный",
-			"categories": 7,
-			"quantity": 1
-		},
-		{
-			"id": 66,
-			"title": "Омлет с сыром Комбо",
-			"price": 280,
-			"image": "https://vkusnoitochka.ru/resize/484x478/upload/iblock/ad9/viq74wen6zsip7tjsf4pppxea506t98z/large.png",
-			"description": "Комбо состоит из Яичницы с беконом, Картофеля фри (сред.) и Напитка на выбор. Цена Комбо может меняться в зависимости от комплектации",
-			"size": "Стандартный",
-			"categories": 7,
 			"quantity": 1
 		}
 	],

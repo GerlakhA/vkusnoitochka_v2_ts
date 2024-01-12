@@ -15,7 +15,6 @@ const CategoryMenu: FC<ICategoryMenu> = () => {
 		'Бургеры и Роллы',
 		'Картофель, стартеры и салаты',
 		'Кафе',
-		'Завтрак',
 	]
 
 	const { onClickCategory } = useGlobalContext()
