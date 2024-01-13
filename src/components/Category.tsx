@@ -12,9 +12,6 @@ const Category = () => {
 			>
 				Акции
 			</Link>
-			<Link className='m-5 hover:opacity-60 focus:font-extrabold' to={'/cafe'}>
-				Кафе
-			</Link>
 			<Link
 				className='m-5 hover:opacity-60 focus:font-extrabold'
 				to={'/orders'}

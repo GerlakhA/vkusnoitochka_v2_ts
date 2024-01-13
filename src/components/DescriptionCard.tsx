@@ -26,7 +26,7 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 
 	const addToCart = (data: Omit<ICartItem, 'id'>) => {
 		postProduct.mutate(data)
-		toast.success('Товар добавлен в корзину.', {
+		toast.success(`${data.title} добавлен в корзину.`, {
 			autoClose: 2000,
 			position: 'top-center',
 			closeOnClick: true,
@@ -56,9 +56,17 @@ const DescriptionCard: FC<IDescriptionCard> = ({ data, open, setOpen }) => {
 						</div>
 						<p className='p-2'>Москва</p>
 						<div>
-							<div className='w-full p-2 bg-[#f9f9f9]'>
-								<div className='flex items-center gap-2'>
+							<div className='w-full flex flex-col justify-center items-center p-4 bg-[#f9f9f9]'>
+								<div className='flex items-center gap-2 w-[90%] bg-[#f4f4f4] rounded-md p-2'>
 									<p>В приложении ты можешь заказать этот продукт</p>
+								</div>
+								<div className='w-full flex justify-center items-center p-4'>
+									<p className='text-neutral-500 text-xs'>
+										Цены и ассортименты продуктов на сайте указаны для
+										выбранного вами региона и могут отличаться в конкретном
+										предприятии. Наличие продуктов и цену уточняйте в выбранном
+										предприятии.
+									</p>
 								</div>
 							</div>
 						</div>

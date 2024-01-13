@@ -25,7 +25,7 @@ const CartItems: FC<ICartItems> = ({ data, totalPrice }) => {
 
 	const deleteCartItemById = (id: number) => {
 		deleteCartItem.mutate(id)
-		toast.success('Товар успешно удален из корзины!', {
+		toast.success(`${data.title} успешно удален из корзины!`, {
 			autoClose: 2000,
 			position: 'top-center',
 			closeOnClick: true,
@@ -44,7 +44,6 @@ const CartItems: FC<ICartItems> = ({ data, totalPrice }) => {
 				<div className={style.price}>
 					{FormatCurrency(data.price * data.quantity)}
 				</div>
-
 				<CartButtons
 					data={data}
 					deleteCartItemById={deleteCartItemById}
